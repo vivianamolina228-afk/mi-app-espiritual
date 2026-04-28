@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mi App Espiritual</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(to bottom, #f3e7ff, #ffffff);
+            text-align: center;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #6a0dad;
+        }
+
+        button {
+            background-color: #b57edc;
+            color: white;
+            border: none;
+            padding: 15px;
+            margin: 10px;
+            width: 250px;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #9b5fc0;
+        }
+
+        #resultado {
+            margin-top: 30px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h1>✨ Espacio de Sanación ✨</h1>
+
+    <p>Elige tu guía espiritual:</p>
+
+    <button onclick="reservar('Sanador 1 - Energía y equilibrio')">
+        🌿 Energía y equilibrio
+    </button>
+
+    <button onclick="reservar('Sanador 2 - Amor y relaciones')">
+        💖 Amor y relaciones
+    </button>
+
+    <button onclick="reservar('Sanador 3 - Propósito de vida')">
+        🌟 Propósito de vida
+    </button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function reservar(nombre) {
+            document.getElementById("resultado").innerHTML =
+                "✅ Has reservado con: <b>" + nombre + "</b> 💫";
+        }
+    </script>
+
+</body>
+</html>

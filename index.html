@@ -98,21 +98,39 @@
     </div>
 
     <script>
-        function reservar(sanador) {
-            let nombre = document.getElementById("nombreCliente").value;
+      <script>
 
-            if(nombre === "") {
-                alert("Escribe tu nombre");
-                return;
-            }
+let reservas = JSON.parse(localStorage.getItem("reservas")) || [];
 
-            let lista = document.getElementById("listaReservas");
+mostrarReservas();
 
-            let nuevaReserva = document.createElement("li");
-            nuevaReserva.innerHTML = nombre + " reservó con " + sanador + " 💫";
+function reservar(sanador) {
+    let nombre = document.getElementById("nombreCliente").value;
 
-            lista.appendChild(nuevaReserva);
-        }
+    if(nombre === "") {
+        alert("Escribe tu nombre");
+        return;
+    }
+
+    reservas.push(nombre + " reservó con " + sanador + " 💫");
+
+    localStorage.setItem("reservas", JSON.stringify(reservas));
+
+    mostrarReservas();
+}
+
+function mostrarReservas() {
+    let lista = document.getElementById("listaReservas");
+    lista.innerHTML = "";
+
+    reservas.forEach(function(reserva) {
+        let item = document.createElement("li");
+        item.innerHTML = reserva;
+        lista.appendChild(item);
+    });
+}
+
+</script>
     </script>
 
 </body>

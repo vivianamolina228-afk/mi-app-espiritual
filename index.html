@@ -1,30 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Mi App Espiritual</title>
+    <title>Espacio de Sanación</title>
 
     <style>
         body {
             font-family: Arial;
-            background: linear-gradient(to bottom, #f3e7ff, #ffffff);
+            background: #f8f4ff;
             text-align: center;
-            padding: 40px;
+            padding: 30px;
         }
 
         h1 {
             color: #6a0dad;
         }
 
+        .contenedor {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .tarjeta {
+            background: white;
+            width: 250px;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+        }
+
         button {
             background-color: #b57edc;
             color: white;
             border: none;
-            padding: 15px;
-            margin: 10px;
-            width: 250px;
-            border-radius: 10px;
-            font-size: 16px;
+            padding: 12px;
+            border-radius: 8px;
             cursor: pointer;
+            width: 100%;
         }
 
         button:hover {
@@ -34,35 +47,43 @@
         #resultado {
             margin-top: 30px;
             font-size: 18px;
-            color: #333;
         }
     </style>
-
 </head>
+
 <body>
 
     <h1>✨ Espacio de Sanación ✨</h1>
+    <p>Encuentra tu guía espiritual ideal</p>
 
-    <p>Elige tu guía espiritual:</p>
+    <div class="contenedor">
 
-    <button onclick="reservar('Sanador 1 - Energía y equilibrio')">
-        🌿 Energía y equilibrio
-    </button>
+        <div class="tarjeta">
+            <h3>🌿 Luna</h3>
+            <p>Especialista en equilibrio energético</p>
+            <button onclick="reservar('Luna')">Reservar</button>
+        </div>
 
-    <button onclick="reservar('Sanador 2 - Amor y relaciones')">
-        💖 Amor y relaciones
-    </button>
+        <div class="tarjeta">
+            <h3>💖 Alma</h3>
+            <p>Sanación emocional y relaciones</p>
+            <button onclick="reservar('Alma')">Reservar</button>
+        </div>
 
-    <button onclick="reservar('Sanador 3 - Propósito de vida')">
-        🌟 Propósito de vida
-    </button>
+        <div class="tarjeta">
+            <h3>🌟 Sol</h3>
+            <p>Propósito de vida y claridad interior</p>
+            <button onclick="reservar('Sol')">Reservar</button>
+        </div>
+
+    </div>
 
     <div id="resultado"></div>
 
     <script>
         function reservar(nombre) {
             document.getElementById("resultado").innerHTML =
-                "✅ Has reservado con: <b>" + nombre + "</b> 💫";
+                "✅ Reserva confirmada con <b>" + nombre + "</b> 💫";
         }
     </script>
 

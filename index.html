@@ -1,60 +1,78 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <h1>✨ AlmaConecta ✨</h1>
+    <title>AlmaConecta</title>
 
-<h2>Encuentra acompañamiento espiritual confiable</h2>
-
-<p>
-La primera plataforma digital que conecta personas
-con guías espirituales verificados para sanar,
-crecer y reconectar consigo mismas.
-</p>
-    <style> 
-    h2 {
-    color: #7d4ca5;
-}
-
-p {
-    max-width: 700px;
-    margin: auto;
-    margin-bottom: 25px;
-}
+    <style>
         body {
+            margin: 0;
             font-family: Arial;
-            background: #f8f4ff;
+            background: #faf7ff;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #7d4ca5, #caa8ff);
+            color: white;
             text-align: center;
-            padding: 30px;
+            padding: 80px 20px;
         }
 
-        h1 {
-            color: #6a0dad;
+        header h1 {
+            font-size: 50px;
         }
 
-        input {
-            padding: 12px;
-            width: 250px;
-            margin-bottom: 20px;
-            border-radius: 8px;
+        header p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: auto;
         }
 
-        .contenedor {
+        section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .beneficios {
             display: flex;
             justify-content: center;
             gap: 20px;
             flex-wrap: wrap;
         }
 
-        .tarjeta {
+        .card {
             background: white;
-            width: 250px;
+            width: 280px;
+            padding: 20px;
+            border-radius: 18px;
+            box-shadow: 0px 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .sanadores {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .sanador {
+            background: white;
+            width: 260px;
             padding: 20px;
             border-radius: 15px;
-            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+            box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
+        }
+
+        input {
+            padding: 12px;
+            width: 250px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            margin-bottom: 25px;
         }
 
         button {
-            background-color: #b57edc;
+            background: #7d4ca5;
             color: white;
             border: none;
             padding: 12px;
@@ -63,58 +81,118 @@ p {
             cursor: pointer;
         }
 
-        #historial {
-            margin-top: 40px;
-            background: white;
-            padding: 20px;
-            border-radius: 15px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+        button:hover {
+            background: #63358a;
         }
 
-        li {
-            text-align: left;
-            margin: 10px 0;
+        #historial {
+            background: white;
+            max-width: 700px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        footer {
+            background: #2d183f;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
         }
     </style>
 </head>
 
 <body>
 
-    <h1>✨ Espacio de Sanación ✨</h1>
+<header>
+    <h1>✨ AlmaConecta ✨</h1>
+    <p>
+        Conectamos personas con guías espirituales verificados
+        para acompañar procesos de sanación, crecimiento y bienestar.
+    </p>
+</header>
+
+<section>
+    <h2>¿Por qué elegirnos?</h2>
+
+    <div class="beneficios">
+        <div class="card">
+            <h3>🔒 Confianza</h3>
+            <p>Perfiles verificados y reputación visible.</p>
+        </div>
+
+        <div class="card">
+            <h3>💫 Personalización</h3>
+            <p>Encuentra al guía ideal para tu necesidad.</p>
+        </div>
+
+        <div class="card">
+            <h3>🌍 Acceso inmediato</h3>
+            <p>Reserva desde cualquier lugar.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Reserva tu sesión</h2>
 
     <input type="text" id="nombreCliente" placeholder="Tu nombre">
 
-    <div class="contenedor">
+    <div class="sanadores">
 
-        <div class="tarjeta">
+        <div class="sanador">
             <h3>🌿 Luna</h3>
-<p>Equilibrio energético</p>
-<p>⭐ 4.9 (128 sesiones)</p>
+            <p>⭐ 4.9</p>
+            <p>Equilibrio energético</p>
             <button onclick="reservar('Luna')">Reservar</button>
         </div>
 
-        <div class="tarjeta">
+        <div class="sanador">
             <h3>💖 Alma</h3>
-<p>Sanación emocional</p>
-<p>⭐ 4.8 (97 sesiones)</p>
+            <p>⭐ 4.8</p>
+            <p>Sanación emocional</p>
             <button onclick="reservar('Alma')">Reservar</button>
         </div>
 
-        <div class="tarjeta">
+        <div class="sanador">
             <h3>🌟 Sol</h3>
-<p>Propósito de vida</p>
-<p>⭐ 5.0 (143 sesiones)</p>
+            <p>⭐ 5.0</p>
+            <p>Propósito de vida</p>
             <button onclick="reservar('Sol')">Reservar</button>
         </div>
 
     </div>
+</section>
 
+<section>
     <div id="historial">
         <h2>📋 Reservas registradas</h2>
         <ul id="listaReservas"></ul>
     </div>
+</section>
+
+<section>
+    <h2>Lo que dicen nuestros usuarios</h2>
+
+    <div class="beneficios">
+        <div class="card">
+            <p>"Me ayudó a reconectarme conmigo."</p>
+        </div>
+
+        <div class="card">
+            <p>"Muy fácil y confiable."</p>
+        </div>
+
+        <div class="card">
+            <p>"Una experiencia transformadora."</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    AlmaConecta © 2026
+</footer>
 
 <script>
 
@@ -146,12 +224,6 @@ function mostrarReservas() {
         item.innerHTML = reserva;
         lista.appendChild(item);
     });
-}
-
-</script>
-
-</body>
-</html>
 }
 
 </script>

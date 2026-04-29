@@ -20,7 +20,6 @@
             width: 250px;
             margin-bottom: 20px;
             border-radius: 8px;
-            border: 1px solid #ccc;
         }
 
         .contenedor {
@@ -44,13 +43,23 @@
             border: none;
             padding: 12px;
             border-radius: 8px;
-            cursor: pointer;
             width: 100%;
+            cursor: pointer;
         }
 
-        #resultado {
-            margin-top: 30px;
-            font-size: 18px;
+        #historial {
+            margin-top: 40px;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        li {
+            text-align: left;
+            margin: 10px 0;
         }
     </style>
 </head>
@@ -58,7 +67,6 @@
 <body>
 
     <h1>✨ Espacio de Sanación ✨</h1>
-    <p>Escribe tu nombre y reserva</p>
 
     <input type="text" id="nombreCliente" placeholder="Tu nombre">
 
@@ -84,19 +92,26 @@
 
     </div>
 
-    <div id="resultado"></div>
+    <div id="historial">
+        <h2>📋 Reservas registradas</h2>
+        <ul id="listaReservas"></ul>
+    </div>
 
     <script>
         function reservar(sanador) {
             let nombre = document.getElementById("nombreCliente").value;
 
             if(nombre === "") {
-                alert("Escribe tu nombre primero");
+                alert("Escribe tu nombre");
                 return;
             }
 
-            document.getElementById("resultado").innerHTML =
-                "✅ " + nombre + ", tu reserva con <b>" + sanador + "</b> fue confirmada 💫";
+            let lista = document.getElementById("listaReservas");
+
+            let nuevaReserva = document.createElement("li");
+            nuevaReserva.innerHTML = nombre + " reservó con " + sanador + " 💫";
+
+            lista.appendChild(nuevaReserva);
         }
     </script>
 

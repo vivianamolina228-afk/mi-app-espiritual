@@ -15,6 +15,14 @@
             color: #6a0dad;
         }
 
+        input {
+            padding: 12px;
+            width: 250px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
         .contenedor {
             display: flex;
             justify-content: center;
@@ -40,10 +48,6 @@
             width: 100%;
         }
 
-        button:hover {
-            background-color: #9b5fc0;
-        }
-
         #resultado {
             margin-top: 30px;
             font-size: 18px;
@@ -54,25 +58,27 @@
 <body>
 
     <h1>✨ Espacio de Sanación ✨</h1>
-    <p>Encuentra tu guía espiritual ideal</p>
+    <p>Escribe tu nombre y reserva</p>
+
+    <input type="text" id="nombreCliente" placeholder="Tu nombre">
 
     <div class="contenedor">
 
         <div class="tarjeta">
             <h3>🌿 Luna</h3>
-            <p>Especialista en equilibrio energético</p>
+            <p>Equilibrio energético</p>
             <button onclick="reservar('Luna')">Reservar</button>
         </div>
 
         <div class="tarjeta">
             <h3>💖 Alma</h3>
-            <p>Sanación emocional y relaciones</p>
+            <p>Sanación emocional</p>
             <button onclick="reservar('Alma')">Reservar</button>
         </div>
 
         <div class="tarjeta">
             <h3>🌟 Sol</h3>
-            <p>Propósito de vida y claridad interior</p>
+            <p>Propósito de vida</p>
             <button onclick="reservar('Sol')">Reservar</button>
         </div>
 
@@ -81,9 +87,16 @@
     <div id="resultado"></div>
 
     <script>
-        function reservar(nombre) {
+        function reservar(sanador) {
+            let nombre = document.getElementById("nombreCliente").value;
+
+            if(nombre === "") {
+                alert("Escribe tu nombre primero");
+                return;
+            }
+
             document.getElementById("resultado").innerHTML =
-                "✅ Reserva confirmada con <b>" + nombre + "</b> 💫";
+                "✅ " + nombre + ", tu reserva con <b>" + sanador + "</b> fue confirmada 💫";
         }
     </script>
 

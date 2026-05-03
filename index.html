@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AlmaConecta</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
@@ -16,150 +16,163 @@ scroll-behavior:smooth;
 body{
 margin:0;
 font-family:'Inter',sans-serif;
-background:linear-gradient(180deg,#0f0d14,#1b1624,#241d30,#16141f);
-color:#d9d2e9;
+background:#faf9f7;
+color:#222;
 }
 
 h1,h2,h3{
-font-family:'Cormorant Garamond',serif;
-letter-spacing:1px;
+font-family:'Playfair Display',serif;
 }
 
 nav{
-background:rgba(20,18,28,0.92);
-padding:18px;
+background:white;
+padding:18px 60px;
 display:flex;
 justify-content:space-between;
+align-items:center;
 position:sticky;
 top:0;
-backdrop-filter:blur(12px);
 z-index:100;
-border-bottom:1px solid rgba(190,170,255,0.15);
+box-shadow:0 2px 10px rgba(0,0,0,0.06);
 }
 
 nav a{
-margin-left:18px;
 text-decoration:none;
-color:#c9b6ff;
-font-weight:500;
+color:#444;
+margin-left:22px;
+font-size:15px;
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+color:#8b6f47;
 }
 
 header{
-position:relative;
-height:100vh;
+height:85vh;
+background:url('https://images.unsplash.com/photo-1506126613408-eca07ce68773') center/cover;
 display:flex;
-justify-content:center;
 align-items:center;
+justify-content:center;
 text-align:center;
-overflow:hidden;
-color:white;
-}
-
-header video{
-position:absolute;
-width:100%;
-height:100%;
-object-fit:cover;
-z-index:-2;
-filter:brightness(0.35) saturate(0.6);
+position:relative;
 }
 
 header::after{
 content:"";
 position:absolute;
-width:100%;
-height:100%;
-background:rgba(40,22,58,0.45);
-z-index:-1;
+inset:0;
+background:rgba(255,255,255,0.55);
 }
 
-.hero-btn{
-background:linear-gradient(135deg,#3e314f,#8e79c7);
-padding:18px 35px;
+.hero{
+position:relative;
+z-index:2;
+max-width:800px;
+}
+
+.hero h1{
+font-size:72px;
+margin-bottom:20px;
+color:#2f2f2f;
+}
+
+.hero p{
+font-size:22px;
+color:#555;
+}
+
+.hero button{
+margin-top:25px;
+padding:16px 35px;
 border:none;
-border-radius:35px;
-font-size:18px;
+background:#8b6f47;
+color:white;
+border-radius:30px;
 cursor:pointer;
-color:#f4efff;
-box-shadow:0 0 25px rgba(180,140,255,0.25);
-}
-
-.hero-btn:hover{
-transform:scale(1.08);
+font-size:16px;
 }
 
 section{
-padding:80px 20px;
-text-align:center;
+padding:80px 60px;
+}
+
+.buscador{
+max-width:700px;
+margin:auto;
+display:flex;
+gap:10px;
+}
+
+input{
+flex:1;
+padding:16px;
+border-radius:30px;
+border:1px solid #ddd;
+font-size:15px;
+}
+
+button{
+padding:14px 25px;
+border:none;
+border-radius:30px;
+background:#8b6f47;
+color:white;
+cursor:pointer;
 }
 
 .grid{
-display:flex;
-justify-content:center;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:30px;
-flex-wrap:wrap;
+margin-top:40px;
 }
 
 .card{
-background:rgba(40,33,54,0.82);
-width:300px;
-padding:25px;
-border-radius:25px;
-box-shadow:0 8px 30px rgba(0,0,0,0.35);
-border:1px solid rgba(190,170,255,0.12);
-transition:0.4s;
-}
-
-.card:hover{
-transform:translateY(-10px);
+background:white;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 8px 20px rgba(0,0,0,0.07);
 }
 
 .card img{
 width:100%;
-height:190px;
+height:220px;
 object-fit:cover;
-border-radius:18px;
-filter:brightness(0.82);
 }
 
-button{
-background:linear-gradient(135deg,#4b3b63,#9f85e8);
-border:none;
-padding:15px;
-width:100%;
-border-radius:25px;
-cursor:pointer;
-color:white;
-font-weight:bold;
-margin-top:10px;
-transition:0.35s;
+.card-content{
+padding:25px;
 }
 
-button:hover{
-transform:scale(1.08);
-box-shadow:0 0 25px rgba(170,140,255,0.35);
-}
-
-input{
-padding:14px;
-width:250px;
-border-radius:16px;
-border:1px solid #4e4267;
-margin:10px;
-background:#1f1a2b;
-color:white;
+.tag{
+display:inline-block;
+padding:6px 14px;
+background:#f3ece1;
+border-radius:20px;
+font-size:13px;
+margin-bottom:15px;
+color:#8b6f47;
 }
 
 .verificado{
-color:#8ed8ff;
+color:#2a9d8f;
+}
+
+.reseñas{
+display:none;
+margin-top:15px;
+padding:15px;
+background:#f8f6f1;
+border-radius:12px;
 }
 
 #historial{
-background:rgba(35,29,46,0.88);
-max-width:850px;
-margin:auto;
-padding:35px;
-border-radius:25px;
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 8px 20px rgba(0,0,0,0.06);
 }
 
 ul{
@@ -168,129 +181,121 @@ padding:0;
 }
 
 li{
-padding:12px;
-border-bottom:1px solid rgba(255,255,255,0.06);
-}
-
-.reseñas{
-display:none;
-margin-top:15px;
-padding:15px;
-background:#1a1624;
-border-radius:18px;
-text-align:left;
-}
-
-.controles{
-display:flex;
-gap:15px;
-justify-content:center;
-margin-bottom:20px;
+padding:14px;
+border-bottom:1px solid #eee;
 }
 
 footer{
-background:#0f0d14;
-color:#c9b6ff;
-padding:35px;
+background:#222;
+color:white;
 text-align:center;
-border-top:1px solid rgba(190,170,255,0.1);
-}
-
-.tutorial-btn{
-margin-top:15px;
+padding:40px;
 }
 
 </style>
 </head>
 
-<body id="inicio">
+<body>
 
 <nav>
-<div>✦ AlmaConecta</div>
+<div class="logo">AlmaConecta</div>
 <div>
-<a href="#tutorial">Tutorial</a>
-<a href="#guias">Guías</a>
+<a href="#tutorial">Cómo funciona</a>
+<a href="#guias">Especialistas</a>
 <a href="#reservas">Reservas</a>
 </div>
 </nav>
 
 <header>
-
-<video autoplay muted loop>
-<source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">
-</video>
-
-<div>
-<h1>Fluye hacia tu sombra luminosa</h1>
-<a href="#tutorial">
-<button class="hero-btn">Comenzar ✦</button>
+<div class="hero">
+<h1>Bienestar espiritual con confianza</h1>
+<p>Conecta con especialistas verificados para tu transformación interior.</p>
+<a href="#guias">
+<button>Explorar especialistas</button>
 </a>
 </div>
-
 </header>
 
 <section id="tutorial">
-
-<h2>Guía de inicio</h2>
+<h2>Cómo funciona</h2>
 
 <div class="grid">
 
 <div class="card">
-<h3>1. Elegir guía</h3>
-<a href="#guias"><button class="tutorial-btn">Ir a guías</button></a>
+<div class="card-content">
+<h3>1. Descubre</h3>
+<p>Explora especialistas según tus necesidades.</p>
+</div>
 </div>
 
 <div class="card">
-<h3>2. Reservar fecha</h3>
-<a href="#guias"><button class="tutorial-btn">Agendar</button></a>
+<div class="card-content">
+<h3>2. Agenda</h3>
+<p>Selecciona fecha y reserva fácilmente.</p>
+</div>
 </div>
 
 <div class="card">
-<h3>3. Revisar historial</h3>
-<a href="#reservas"><button class="tutorial-btn">Ver reservas</button></a>
+<div class="card-content">
+<h3>3. Reconecta</h3>
+<p>Comienza tu proceso de bienestar.</p>
+</div>
 </div>
 
 </div>
-
 </section>
 
 <section id="guias">
 
-<h2>Guías verificados</h2>
+<h2>Especialistas destacados</h2>
 
+<div class="buscador">
 <input type="text" id="nombreCliente" placeholder="Tu nombre">
 <input type="date" id="fechaReserva">
+</div>
 
 <div class="grid">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9">
-<h3>🌿 Luna <span class="verificado">✔</span></h3>
+<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330">
+<div class="card-content">
+<div class="tag">Energía</div>
+<h3>Luna <span class="verificado">✔</span></h3>
+<p>Equilibrio energético</p>
 <button onclick="toggleReseñas('r1')">Reseñas</button>
 <div id="r1" class="reseñas">
-<p>Muy conectada</p>
+Excelente acompañamiento
 </div>
 <button onclick="reservar('Luna')">Reservar</button>
 </div>
+</div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330">
-<h3>🧚 Alma <span class="verificado">✔</span></h3>
+<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9">
+<div class="card-content">
+<div class="tag">Emoción</div>
+<h3>Alma <span class="verificado">✔</span></h3>
+<p>Sanación emocional</p>
 <button onclick="toggleReseñas('r2')">Reseñas</button>
 <div id="r2" class="reseñas">
-<p>Excelente guía</p>
+Muy cercana y clara
 </div>
 <button onclick="reservar('Alma')">Reservar</button>
+</div>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e">
-<h3>🌞 Sol <span class="verificado">✔</span></h3>
+<div class="card-content">
+<div class="tag">Propósito</div>
+<h3>Sol <span class="verificado">✔</span></h3>
+<p>Claridad interior</p>
 <button onclick="toggleReseñas('r3')">Reseñas</button>
 <div id="r3" class="reseñas">
-<p>Mucha claridad</p>
+Transformador
 </div>
 <button onclick="reservar('Sol')">Reservar</button>
+</div>
 </div>
 
 </div>
@@ -299,14 +304,11 @@ margin-top:15px;
 
 <section id="reservas">
 
-<div id="historial">
-
 <h2>Reservas agendadas</h2>
 
-<div class="controles">
-<button onclick="toggleHistorial()">Ocultar / Mostrar</button>
+<div id="historial">
+
 <button onclick="reiniciarReservas()">Reiniciar</button>
-</div>
 
 <ul id="listaReservas"></ul>
 
@@ -315,7 +317,7 @@ margin-top:15px;
 </section>
 
 <footer>
-✦ AlmaConecta © 2026
+AlmaConecta © 2026
 </footer>
 
 <script>
@@ -325,6 +327,7 @@ let reservas=JSON.parse(localStorage.getItem("reservas"))||[];
 mostrarReservas();
 
 function reservar(sanador){
+
 let nombre=document.getElementById("nombreCliente").value;
 let fecha=document.getElementById("fechaReserva").value;
 
@@ -334,14 +337,18 @@ return;
 }
 
 reservas.push(nombre+" reservó con "+sanador+" para "+fecha);
+
 localStorage.setItem("reservas",JSON.stringify(reservas));
+
 mostrarReservas();
+
 window.location.href="#reservas";
 }
 
 function mostrarReservas(){
 let lista=document.getElementById("listaReservas");
 lista.innerHTML="";
+
 reservas.forEach(function(r){
 let item=document.createElement("li");
 item.innerHTML=r;
@@ -353,11 +360,6 @@ function reiniciarReservas(){
 reservas=[];
 localStorage.setItem("reservas",JSON.stringify(reservas));
 mostrarReservas();
-}
-
-function toggleHistorial(){
-let lista=document.getElementById("listaReservas");
-lista.style.display=lista.style.display==="none"?"block":"none";
 }
 
 function toggleReseñas(id){

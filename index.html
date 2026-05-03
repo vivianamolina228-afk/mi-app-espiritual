@@ -131,9 +131,15 @@ box-shadow:0 20px 40px rgba(0,0,0,0.2);
 z-index:999;
 text-align:center;
 }
+
+footer{
+background:#222;
+color:white;
+text-align:center;
+padding:40px;
+}
 </style>
 </head>
-
 <body>
 
 <nav>
@@ -154,14 +160,36 @@ text-align:center;
 </header>
 
 <section id="tutorial">
-<h2 style="text-align:center;">Cómo funciona</h2>
-<div class="grid">
-<div class="card"><div class="card-content"><h3>1</h3><p>Explora</p></div></div>
-<div class="card"><div class="card-content"><h3>2</h3><p>Filtra</p></div></div>
-<div class="card"><div class="card-content"><h3>3</h3><p>Reserva</p></div></div>
-</div>
-</section>
+<h2 style="text-align:center;">Cómo funciona AlmaConecta</h2>
 
+<div class="grid">
+
+<div class="card">
+<div class="card-content">
+<h3>1. Explora especialistas</h3>
+<p>Descubre terapeutas verificados.</p>
+<a href="#guias"><button>Explorar</button></a>
+</div>
+</div>
+
+<div class="card">
+<div class="card-content">
+<h3>2. Elige modalidad</h3>
+<p>Online o presencial.</p>
+<a href="#guias"><button>Reservar</button></a>
+</div>
+</div>
+
+<div class="card">
+<div class="card-content">
+<h3>3. Confirma</h3>
+<p>Reserva inmediata.</p>
+<a href="#reservas"><button>Ver reservas</button></a>
+</div>
+
+
+
+</section>
 <section id="guias">
 
 <h2>Especialistas</h2>
@@ -183,45 +211,86 @@ text-align:center;
 <option>Presencial</option>
 </select>
 
-<select id="especialidadFiltro" onchange="filtrarEspecialidad()">
-<option value="todos">Tipo de especialidad</option>
-<option value="energia">Energía</option>
-<option value="emocional">Emocional</option>
-<option value="claridad">Claridad</option>
-</select>
-
 <div class="grid">
 
-<div class="card guia" data-especialidad="energia">
+<div class="card guia">
 <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330">
 <div class="card-content">
 <div class="tag">Energía</div>
 <h3>Luna ✔</h3>
+<div class="perfil">8 años · 1247 sesiones<br>⭐ 4.8 (327)<br>$24.990 CLP</div>
 <button onclick="toggleReseñas('r1')">Reseñas</button>
 <div id="r1" class="reseñas">Excelente guía energética</div>
+<button onclick="toggleMapa('m1')">Ubicación</button>
+<div id="m1" class="mapa">
+<p>Santiago Centro</p>
+<iframe src="https://maps.google.com/maps?q=santiago&t=&z=13&output=embed"></iframe>
+</div>
 <button onclick="reservar('Luna')">Reservar</button>
 </div>
 </div>
 
-<div class="card guia" data-especialidad="emocional">
+<div class="card guia">
 <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9">
 <div class="card-content">
 <div class="tag">Emocional</div>
 <h3>Alma ✔</h3>
+<div class="perfil">11 años · 2031 sesiones<br>⭐ 4.9 (514)<br>$29.990 CLP</div>
 <button onclick="toggleReseñas('r2')">Reseñas</button>
 <div id="r2" class="reseñas">Muy cercana</div>
+<button onclick="toggleMapa('m2')">Ubicación</button>
+<div id="m2" class="mapa">
+<iframe src="https://maps.google.com/maps?q=providencia&t=&z=13&output=embed"></iframe>
+</div>
 <button onclick="reservar('Alma')">Reservar</button>
 </div>
 </div>
 
-<div class="card guia" data-especialidad="claridad">
+<div class="card guia">
 <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e">
 <div class="card-content">
 <div class="tag">Claridad</div>
 <h3>Sol ✔</h3>
+<div class="perfil">6 años · 893 sesiones<br>⭐ 4.7 (201)<br>$19.990 CLP</div>
 <button onclick="toggleReseñas('r3')">Reseñas</button>
 <div id="r3" class="reseñas">Muy claro</div>
+<button onclick="toggleMapa('m3')">Ubicación</button>
+<div id="m3" class="mapa">
+<iframe src="https://maps.google.com/maps?q=las+condes&t=&z=13&output=embed"></iframe>
+</div>
 <button onclick="reservar('Sol')">Reservar</button>
+</div>
+</div>
+
+<div class="card guia">
+<img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df">
+<div class="card-content">
+<div class="tag">Energía</div>
+<h3>Aura ✔</h3>
+<div class="perfil">9 años · 1588 sesiones<br>⭐ 4.8 (402)<br>$27.990 CLP</div>
+<button onclick="toggleReseñas('r4')">Reseñas</button>
+<div id="r4" class="reseñas">Muy profesional</div>
+<button onclick="toggleMapa('m4')">Ubicación</button>
+<div id="m4" class="mapa">
+<iframe src="https://maps.google.com/maps?q=ñuñoa&t=&z=13&output=embed"></iframe>
+</div>
+<button onclick="reservar('Aura')">Reservar</button>
+</div>
+</div>
+
+<div class="card guia">
+<img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d">
+<div class="card-content">
+<div class="tag">Emocional</div>
+<h3>Nova ✔</h3>
+<div class="perfil">5 años · 674 sesiones<br>⭐ 4.6 (143)<br>$18.990 CLP</div>
+<button onclick="toggleReseñas('r5')">Reseñas</button>
+<div id="r5" class="reseñas">Excelente conexión</div>
+<button onclick="toggleMapa('m5')">Ubicación</button>
+<div id="m5" class="mapa">
+<iframe src="https://maps.google.com/maps?q=vitacura&t=&z=13&output=embed"></iframe>
+</div>
+<button onclick="reservar('Nova')">Reservar</button>
 </div>
 </div>
 
@@ -238,6 +307,8 @@ text-align:center;
 <p id="mensajeConfirmacion"></p>
 <button onclick="cerrarConfirmacion()">Cerrar</button>
 </div>
+
+<footer>AlmaConecta © 2026</footer>
 
 <script>
 
@@ -279,25 +350,6 @@ lista.appendChild(item);
 });
 }
 
-function toggleReseñas(id){
-let x=document.getElementById(id);
-x.style.display=x.style.display==="block"?"none":"block";
-}
-
-function filtrarEspecialidad(){
-let filtro=document.getElementById("especialidadFiltro").value;
-let guias=document.querySelectorAll(".guia");
-
-guias.forEach(function(guia){
-if(filtro==="todos" || guia.dataset.especialidad===filtro){
-guia.style.display="block";
-}else{
-guia.style.display="none";
-}
-});
-}
-
 </script>
-
 </body>
 </html>

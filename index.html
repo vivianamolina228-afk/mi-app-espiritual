@@ -7,6 +7,10 @@
 
 <style>
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
 margin:0;
 font-family:Arial,sans-serif;
@@ -20,20 +24,22 @@ padding:18px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-box-shadow:0 2px 10px rgba(0,0,0,0.08);
 position:sticky;
 top:0;
+box-shadow:0 2px 10px rgba(0,0,0,0.08);
+z-index:100;
 }
 
 nav h2{
-margin:0;
 color:#6a0dad;
+margin:0;
 }
 
 nav a{
 text-decoration:none;
 color:#555;
 margin-left:20px;
+font-weight:bold;
 }
 
 header{
@@ -44,34 +50,22 @@ color:white;
 }
 
 header h1{
-font-size:58px;
-margin-bottom:20px;
+font-size:55px;
 }
 
-header p{
-font-size:20px;
-max-width:700px;
-margin:auto;
-}
-
-.cta{
-margin-top:30px;
+header button{
 background:white;
 color:#6a0dad;
 padding:15px 30px;
 border:none;
 border-radius:12px;
-font-size:16px;
 cursor:pointer;
+font-weight:bold;
 }
 
 section{
 padding:70px 20px;
 text-align:center;
-}
-
-h2{
-color:#6a0dad;
 }
 
 .grid{
@@ -92,6 +86,13 @@ transition:0.3s;
 
 .card:hover{
 transform:translateY(-8px);
+}
+
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+border-radius:12px;
 }
 
 input{
@@ -136,53 +137,65 @@ text-align:center;
 padding:35px;
 }
 
+.volver{
+display:inline-block;
+margin-top:30px;
+text-decoration:none;
+color:#6a0dad;
+font-weight:bold;
+}
+
 </style>
 </head>
 
-<body>
+<body id="inicio">
 
 <nav>
 <h2>✨ AlmaConecta</h2>
+
 <div>
-<a href="#">Inicio</a>
-<a href="#">Guías</a>
-<a href="#">Reservas</a>
+<a href="#inicio">Inicio</a>
+<a href="#como">Cómo funciona</a>
+<a href="#guias">Guías</a>
+<a href="#testimonios">Testimonios</a>
 </div>
 </nav>
 
 <header>
 <h1>Conecta con tu bienestar interior</h1>
-<p>
-Encuentra acompañamiento espiritual confiable,
-personalizado y accesible desde cualquier lugar.
-</p>
-<button class="cta">Comenzar ahora</button>
+<p>Sanación espiritual confiable y personalizada.</p>
+<a href="#guias">
+<button>Comenzar ahora</button>
+</a>
 </header>
 
-<section>
+<section id="como">
 <h2>Cómo funciona</h2>
 
 <div class="grid">
 
 <div class="card">
-<h3>1️⃣ Explora</h3>
-<p>Conoce guías espirituales verificados.</p>
+<img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773">
+<h3>Explora</h3>
+<p>Descubre guías verificados.</p>
 </div>
 
 <div class="card">
-<h3>2️⃣ Reserva</h3>
-<p>Agenda fácilmente tu sesión.</p>
+<img src="https://images.unsplash.com/photo-1493836512294-502baa1986e2">
+<h3>Reserva</h3>
+<p>Agenda tu sesión.</p>
 </div>
 
 <div class="card">
-<h3>3️⃣ Sana</h3>
-<p>Recibe acompañamiento personalizado.</p>
+<img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438">
+<h3>Sana</h3>
+<p>Reconecta contigo.</p>
 </div>
 
 </div>
 </section>
 
-<section>
+<section id="guias">
 <h2>Nuestros guías</h2>
 
 <input type="text" id="nombreCliente" placeholder="Tu nombre">
@@ -190,6 +203,7 @@ personalizado y accesible desde cualquier lugar.
 <div class="grid">
 
 <div class="card">
+<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330">
 <h3>🌿 Luna</h3>
 <p>⭐ 4.9</p>
 <p>Equilibrio energético</p>
@@ -197,6 +211,7 @@ personalizado y accesible desde cualquier lugar.
 </div>
 
 <div class="card">
+<img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e">
 <h3>💖 Alma</h3>
 <p>⭐ 4.8</p>
 <p>Sanación emocional</p>
@@ -204,6 +219,7 @@ personalizado y accesible desde cualquier lugar.
 </div>
 
 <div class="card">
+<img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d">
 <h3>🌟 Sol</h3>
 <p>⭐ 5.0</p>
 <p>Propósito de vida</p>
@@ -215,29 +231,31 @@ personalizado y accesible desde cualquier lugar.
 
 <section>
 <div id="historial">
-<h2>Reservas</h2>
+<h2>Reservas registradas</h2>
 <ul id="listaReservas"></ul>
 </div>
 </section>
 
-<section>
+<section id="testimonios">
 <h2>Testimonios</h2>
 
 <div class="grid">
 
 <div class="card">
-<p>"Una experiencia muy sanadora."</p>
+<p>"Transformador."</p>
 </div>
 
 <div class="card">
-<p>"Simple, clara y confiable."</p>
+<p>"Muy confiable."</p>
 </div>
 
 <div class="card">
-<p>"Me sentí acompañada."</p>
+<p>"Una experiencia hermosa."</p>
 </div>
 
 </div>
+
+<a class="volver" href="#inicio">⬆ Volver arriba</a>
 </section>
 
 <footer>
@@ -263,6 +281,8 @@ reservas.push(nombre+" reservó con "+sanador+" 💫");
 localStorage.setItem("reservas",JSON.stringify(reservas));
 
 mostrarReservas();
+
+window.location.href="#testimonios";
 }
 
 function mostrarReservas(){

@@ -9,13 +9,17 @@
 
 <style>
 html{scroll-behavior:smooth;}
+
 body{
 margin:0;
 font-family:'Inter',sans-serif;
 background:#faf9f7;
 color:#222;
 }
-h1,h2,h3{font-family:'Playfair Display',serif;}
+
+h1,h2,h3{
+font-family:'Playfair Display',serif;
+}
 
 nav{
 background:white;
@@ -60,6 +64,7 @@ background:rgba(255,255,255,0.55);
 .hero{
 position:relative;
 z-index:2;
+max-width:800px;
 }
 
 .hero h1{
@@ -81,7 +86,7 @@ padding:80px 60px;
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
 gap:30px;
 margin-top:40px;
 }
@@ -91,6 +96,11 @@ background:white;
 border-radius:20px;
 overflow:hidden;
 box-shadow:0 8px 20px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
 }
 
 .card img{
@@ -109,6 +119,7 @@ padding:14px;
 margin:8px 0;
 border-radius:14px;
 border:1px solid #ddd;
+font-size:15px;
 }
 
 .reseñas{
@@ -128,21 +139,18 @@ font-size:13px;
 margin-bottom:12px;
 }
 
-.detalle{
+.perfil{
 font-size:14px;
-margin:6px 0;
-color:#666;
-}
-
-.rating{
-color:#d4a017;
-font-weight:bold;
+line-height:1.7;
+color:#555;
+margin-bottom:15px;
 }
 
 #historial{
 background:white;
 padding:30px;
 border-radius:20px;
+box-shadow:0 8px 20px rgba(0,0,0,0.06);
 }
 
 ul{
@@ -166,6 +174,8 @@ padding:35px;
 border-radius:20px;
 box-shadow:0 20px 40px rgba(0,0,0,0.2);
 z-index:999;
+text-align:center;
+max-width:400px;
 }
 
 footer{
@@ -182,6 +192,7 @@ padding:40px;
 <nav>
 <div class="logo">AlmaConecta</div>
 <div>
+<a href="#tutorial">Cómo funciona</a>
 <a href="#guias">Marketplace</a>
 <a href="#reservas">Reservas</a>
 </div>
@@ -189,10 +200,20 @@ padding:40px;
 
 <header>
 <div class="hero">
-<h1>Encuentra tu guía ideal</h1>
+<h1>Marketplace espiritual</h1>
+<p>Encuentra especialistas verificados para tu bienestar</p>
 <a href="#guias"><button>Explorar</button></a>
 </div>
 </header>
+
+<section id="tutorial">
+<h2>Cómo funciona</h2>
+<div class="grid">
+<div class="card"><div class="card-content">1. Explora especialistas</div></div>
+<div class="card"><div class="card-content">2. Filtra por necesidad</div></div>
+<div class="card"><div class="card-content">3. Reserva</div></div>
+</div>
+</section>
 
 <section id="guias">
 
@@ -202,7 +223,7 @@ padding:40px;
 <input type="date" id="fechaReserva">
 
 <select id="horaReserva">
-<option value="">Horario</option>
+<option value="">Selecciona horario</option>
 <option>10:00</option>
 <option>12:00</option>
 <option>16:00</option>
@@ -223,13 +244,19 @@ padding:40px;
 <div class="card-content">
 <div class="tag">Energía</div>
 <h3>Luna ✔</h3>
-<p class="rating">⭐ 4.9 (128 reseñas)</p>
-<p class="detalle">8 años experiencia</p>
-<p class="detalle">542 sesiones</p>
-<p class="detalle">Videollamada</p>
-<p class="detalle">$32 USD</p>
+<div class="perfil">
+Especialista en armonización energética<br>
+8 años de experiencia<br>
+1.247 sesiones<br>
+⭐ 4.8 (327 reseñas)<br>
+<strong>$24.990 CLP</strong>
+</div>
 <button onclick="toggleReseñas('r1')">Reseñas</button>
-<div id="r1" class="reseñas">Excelente acompañamiento energético</div>
+<div id="r1" class="reseñas">
+Excelente guía energética<br>
+Muy profesional<br>
+Gran contención emocional
+</div>
 <button onclick="reservar('Luna')">Reservar</button>
 </div>
 </div>
@@ -239,13 +266,19 @@ padding:40px;
 <div class="card-content">
 <div class="tag">Emocional</div>
 <h3>Alma ✔</h3>
-<p class="rating">⭐ 4.8 (96 reseñas)</p>
-<p class="detalle">6 años experiencia</p>
-<p class="detalle">388 sesiones</p>
-<p class="detalle">Chat + Video</p>
-<p class="detalle">$28 USD</p>
+<div class="perfil">
+Sanación emocional profunda<br>
+11 años de experiencia<br>
+2.031 sesiones<br>
+⭐ 4.9 (514 reseñas)<br>
+<strong>$29.990 CLP</strong>
+</div>
 <button onclick="toggleReseñas('r2')">Reseñas</button>
-<div id="r2" class="reseñas">Muy cercana y empática</div>
+<div id="r2" class="reseñas">
+Muy cercana y empática<br>
+Proceso transformador<br>
+Excelente acompañamiento
+</div>
 <button onclick="reservar('Alma')">Reservar</button>
 </div>
 </div>
@@ -255,14 +288,51 @@ padding:40px;
 <div class="card-content">
 <div class="tag">Claridad</div>
 <h3>Sol ✔</h3>
-<p class="rating">⭐ 5.0 (173 reseñas)</p>
-<p class="detalle">10 años experiencia</p>
-<p class="detalle">812 sesiones</p>
-<p class="detalle">Videollamada</p>
-<p class="detalle">$40 USD</p>
+<div class="perfil">
+Claridad interior y propósito<br>
+6 años de experiencia<br>
+893 sesiones<br>
+⭐ 4.7 (201 reseñas)<br>
+<strong>$19.990 CLP</strong>
+</div>
 <button onclick="toggleReseñas('r3')">Reseñas</button>
-<div id="r3" class="reseñas">Transformador</div>
+<div id="r3" class="reseñas">
+Muy claro y preciso<br>
+Excelente orientación
+</div>
 <button onclick="reservar('Sol')">Reservar</button>
+</div>
+</div>
+
+<div class="card guia" data-especialidad="energia">
+<img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df">
+<div class="card-content">
+<div class="tag">Energía</div>
+<h3>Aura ✔</h3>
+<div class="perfil">
+Limpieza energética avanzada<br>
+9 años de experiencia<br>
+1.588 sesiones<br>
+⭐ 4.8 (402 reseñas)<br>
+<strong>$27.990 CLP</strong>
+</div>
+<button onclick="reservar('Aura')">Reservar</button>
+</div>
+</div>
+
+<div class="card guia" data-especialidad="emocional">
+<img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d">
+<div class="card-content">
+<div class="tag">Emocional</div>
+<h3>Nova ✔</h3>
+<div class="perfil">
+Reconexión emocional<br>
+5 años de experiencia<br>
+674 sesiones<br>
+⭐ 4.6 (143 reseñas)<br>
+<strong>$18.990 CLP</strong>
+</div>
+<button onclick="reservar('Nova')">Reservar</button>
 </div>
 </div>
 
@@ -270,7 +340,8 @@ padding:40px;
 </section>
 
 <section id="reservas">
-<h2>Reservas</h2>
+<h2>Reservas agendadas</h2>
+
 <div id="historial">
 <button onclick="reiniciarReservas()">Reiniciar</button>
 <ul id="listaReservas"></ul>
@@ -303,8 +374,8 @@ return;
 }
 
 let reserva=nombre+" reservó con "+sanador+" para "+fecha+" a las "+hora;
-reservas.push(reserva);
 
+reservas.push(reserva);
 localStorage.setItem("reservas",JSON.stringify(reservas));
 mostrarReservas();
 
@@ -314,6 +385,7 @@ document.getElementById("confirmacion").style.display="block";
 
 function cerrarConfirmacion(){
 document.getElementById("confirmacion").style.display="none";
+window.location.href="#reservas";
 }
 
 function mostrarReservas(){
@@ -342,7 +414,11 @@ let filtro=document.getElementById("filtroEspecialidad").value;
 let guias=document.querySelectorAll(".guia");
 
 guias.forEach(function(guia){
-guia.style.display=(filtro==="todos"||guia.dataset.especialidad===filtro)?"block":"none";
+if(filtro==="todos"||guia.dataset.especialidad===filtro){
+guia.style.display="block";
+}else{
+guia.style.display="none";
+}
 });
 }
 

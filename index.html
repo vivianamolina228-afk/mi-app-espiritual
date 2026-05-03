@@ -146,6 +146,7 @@ padding:40px;
 <div class="logo">AlmaConecta</div>
 <div>
 <a href="#">Inicio</a>
+<a href="#especialidades">Especialidades</a>
 <a href="#tutorial">Tutorial</a>
 <a href="#guias">Marketplace</a>
 <a href="#reservas">Reservas</a>
@@ -190,7 +191,39 @@ padding:40px;
 
 </div>
 </section>
+<section id="especialidades">
 
+<h2 style="text-align:center;">Tipos de especialidades</h2>
+
+<div class="grid">
+
+<div class="card">
+<div class="card-content">
+<h3>✨ Energía</h3>
+<p>Armonización, limpieza y balance energético.</p>
+<button onclick="filtrarDesdeBoton('energia')">Explorar</button>
+</div>
+</div>
+
+<div class="card">
+<div class="card-content">
+<h3>💛 Emocional</h3>
+<p>Procesos de sanación emocional profunda.</p>
+<button onclick="filtrarDesdeBoton('emocional')">Explorar</button>
+</div>
+</div>
+
+<div class="card">
+<div class="card-content">
+<h3>☀ Claridad</h3>
+<p>Orientación interior y propósito.</p>
+<button onclick="filtrarDesdeBoton('claridad')">Explorar</button>
+</div>
+</div>
+
+</div>
+
+</section>
 <section id="guias">
 
 <h2>Especialistas</h2>
@@ -362,6 +395,23 @@ x.style.display=x.style.display==="block"?"none":"block";
 }
 
 </script>
+function filtrarDesdeBoton(tipo){
 
+document.getElementById("filtroEspecialidad").value=tipo;
+
+let guias=document.querySelectorAll(".guia");
+
+guias.forEach(function(guia){
+
+if(guia.dataset.especialidad===tipo){
+guia.style.display="block";
+}else{
+guia.style.display="none";
+}
+
+});
+
+window.location.href="#guias";
+}
 </body>
 </html>

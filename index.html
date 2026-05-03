@@ -1,106 +1,126 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>AlmaConecta</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AlmaConecta</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial;
-            background: #faf7ff;
-            color: #333;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background:
+    radial-gradient(circle at top left, #efe1ff, transparent 40%),
+    radial-gradient(circle at bottom right, #f7dfff, transparent 35%),
+    #faf7ff;
+    color: #333;
+}
 
-        header {
-            background: linear-gradient(135deg, #7d4ca5, #caa8ff);
-            color: white;
-            text-align: center;
-            padding: 80px 20px;
-        }
+header {
+    background: linear-gradient(135deg, #7d4ca5, #caa8ff);
+    color: white;
+    text-align: center;
+    padding: 90px 20px;
+    position: relative;
+    overflow: hidden;
+}
 
-        header h1 {
-            font-size: 50px;
-        }
+header h1 {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
 
-        header p {
-            font-size: 20px;
-            max-width: 700px;
-            margin: auto;
-        }
+header p {
+    max-width: 700px;
+    margin: auto;
+    font-size: 20px;
+}
 
-        section {
-            padding: 50px 20px;
-            text-align: center;
-        }
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
 
-        .beneficios {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
+h2 {
+    color: #6a0dad;
+}
 
-        .card {
-            background: white;
-            width: 280px;
-            padding: 20px;
-            border-radius: 18px;
-            box-shadow: 0px 5px 15px rgba(0,0,0,0.08);
-        }
+.beneficios,
+.sanadores {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
 
-        .sanadores {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
+.card,
+.sanador {
+    background: white;
+    width: 280px;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-        .sanador {
-            background: white;
-            width: 260px;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
-        }
+.card:hover,
+.sanador:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 12px 25px rgba(0,0,0,0.12);
+}
 
-        input {
-            padding: 12px;
-            width: 250px;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-            margin-bottom: 25px;
-        }
+input {
+    padding: 14px;
+    width: 260px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
 
-        button {
-            background: #7d4ca5;
-            color: white;
-            border: none;
-            padding: 12px;
-            border-radius: 8px;
-            width: 100%;
-            cursor: pointer;
-        }
+button {
+    background: #7d4ca5;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 10px;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 15px;
+}
 
-        button:hover {
-            background: #63358a;
-        }
+button:hover {
+    background: #63358a;
+    transform: scale(1.04);
+}
 
-        #historial {
-            background: white;
-            max-width: 700px;
-            margin: auto;
-            padding: 20px;
-            border-radius: 15px;
-        }
+#historial {
+    background: white;
+    max-width: 700px;
+    margin: auto;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.08);
+}
 
-        footer {
-            background: #2d183f;
-            color: white;
-            text-align: center;
-            padding: 30px;
-            margin-top: 40px;
-        }
-    </style>
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px;
+}
+
+footer {
+    background: #2d183f;
+    color: white;
+    text-align: center;
+    padding: 35px;
+    margin-top: 40px;
+}
+</style>
 </head>
 
 <body>
@@ -108,8 +128,9 @@
 <header>
     <h1>✨ AlmaConecta ✨</h1>
     <p>
-        Conectamos personas con guías espirituales verificados
-        para acompañar procesos de sanación, crecimiento y bienestar.
+        La plataforma digital que conecta personas con
+        guías espirituales verificados para sanar,
+        crecer y reconectar consigo mismas.
     </p>
 </header>
 
@@ -117,49 +138,51 @@
     <h2>¿Por qué elegirnos?</h2>
 
     <div class="beneficios">
+
         <div class="card">
             <h3>🔒 Confianza</h3>
-            <p>Perfiles verificados y reputación visible.</p>
+            <p>Perfiles verificados y reputación transparente.</p>
         </div>
 
         <div class="card">
             <h3>💫 Personalización</h3>
-            <p>Encuentra al guía ideal para tu necesidad.</p>
+            <p>Encuentra el acompañamiento ideal.</p>
         </div>
 
         <div class="card">
             <h3>🌍 Acceso inmediato</h3>
             <p>Reserva desde cualquier lugar.</p>
         </div>
+
     </div>
 </section>
 
 <section>
     <h2>Reserva tu sesión</h2>
 
-    <input type="text" id="nombreCliente" placeholder="Tu nombre">
+    <input type="text" id="nombreCliente" placeholder="Escribe tu nombre">
 
     <div class="sanadores">
 
         <div class="sanador">
             <h3>🌿 Luna</h3>
-            <p>⭐ 4.9</p>
+            <p>⭐ 4.9 (128 sesiones)</p>
             <p>Equilibrio energético</p>
-            <button onclick="reservar('Luna')">Reservar</button>
+            <button onclick="reservar('Luna')">✨ Reservar sesión</button>
         </div>
 
         <div class="sanador">
             <h3>💖 Alma</h3>
-            <p>⭐ 4.8</p>
+            <p>⭐ 4.8 (97 sesiones)</p>
             <p>Sanación emocional</p>
-            <button onclick="reservar('Alma')">Reservar</button>
+            <button onclick="reservar('Alma')">✨ Reservar sesión</button>
         </div>
 
         <div class="sanador">
             <h3>🌟 Sol</h3>
-            <p>⭐ 5.0</p>
+            <p>⭐ 5.0 (143 sesiones)</p>
             <p>Propósito de vida</p>
-            <button onclick="reservar('Sol')">Reservar</button>
+            <button onclick="reservar('Sol')">✨ Reservar sesión</button>
         </div>
 
     </div>
@@ -173,20 +196,22 @@
 </section>
 
 <section>
-    <h2>Lo que dicen nuestros usuarios</h2>
+    <h2>Experiencias</h2>
 
     <div class="beneficios">
+
         <div class="card">
             <p>"Me ayudó a reconectarme conmigo."</p>
         </div>
 
         <div class="card">
-            <p>"Muy fácil y confiable."</p>
+            <p>"Muy intuitiva y confiable."</p>
         </div>
 
         <div class="card">
             <p>"Una experiencia transformadora."</p>
         </div>
+
     </div>
 </section>
 
@@ -203,7 +228,7 @@ mostrarReservas();
 function reservar(sanador) {
     let nombre = document.getElementById("nombreCliente").value;
 
-    if(nombre === "") {
+    if (nombre === "") {
         alert("Escribe tu nombre");
         return;
     }

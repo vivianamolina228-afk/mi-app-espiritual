@@ -140,11 +140,13 @@ padding:40px;
 }
 </style>
 </head>
-<body>
+
+<body id="inicio">
 
 <nav>
 <div class="logo">AlmaConecta</div>
 <div>
+<a href="#inicio">Inicio</a>
 <a href="#tutorial">Tutorial</a>
 <a href="#guias">Marketplace</a>
 <a href="#reservas">Reservas</a>
@@ -154,7 +156,7 @@ padding:40px;
 <header>
 <div class="hero">
 <h1>Marketplace espiritual</h1>
-<a href="#guias"><button>Explorar</button></a>
+<a href="#tutorial"><button>Comenzar</button></a>
 </div>
 </header>
 
@@ -222,10 +224,7 @@ padding:40px;
 <button onclick="toggleReseñas('r1')">Reseñas</button>
 <div id="r1" class="reseñas">Excelente guía energética</div>
 <button onclick="toggleMapa('m1')">Ubicación</button>
-<div id="m1" class="mapa">
-<p>Santiago Centro</p>
-<iframe src="https://maps.google.com/maps?q=santiago&t=&z=13&output=embed"></iframe>
-</div>
+<div id="m1" class="mapa"><iframe src="https://maps.google.com/maps?q=santiago&t=&z=13&output=embed"></iframe></div>
 <button onclick="reservar('Luna')">Reservar</button>
 </div>
 </div>
@@ -239,9 +238,7 @@ padding:40px;
 <button onclick="toggleReseñas('r2')">Reseñas</button>
 <div id="r2" class="reseñas">Muy cercana</div>
 <button onclick="toggleMapa('m2')">Ubicación</button>
-<div id="m2" class="mapa">
-<iframe src="https://maps.google.com/maps?q=providencia&t=&z=13&output=embed"></iframe>
-</div>
+<div id="m2" class="mapa"><iframe src="https://maps.google.com/maps?q=providencia&t=&z=13&output=embed"></iframe></div>
 <button onclick="reservar('Alma')">Reservar</button>
 </div>
 </div>
@@ -255,42 +252,8 @@ padding:40px;
 <button onclick="toggleReseñas('r3')">Reseñas</button>
 <div id="r3" class="reseñas">Muy claro</div>
 <button onclick="toggleMapa('m3')">Ubicación</button>
-<div id="m3" class="mapa">
-<iframe src="https://maps.google.com/maps?q=las+condes&t=&z=13&output=embed"></iframe>
-</div>
+<div id="m3" class="mapa"><iframe src="https://maps.google.com/maps?q=las+condes&t=&z=13&output=embed"></iframe></div>
 <button onclick="reservar('Sol')">Reservar</button>
-</div>
-</div>
-
-<div class="card guia">
-<img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df">
-<div class="card-content">
-<div class="tag">Energía</div>
-<h3>Aura ✔</h3>
-<div class="perfil">9 años · 1588 sesiones<br>⭐ 4.8 (402)<br>$27.990 CLP</div>
-<button onclick="toggleReseñas('r4')">Reseñas</button>
-<div id="r4" class="reseñas">Muy profesional</div>
-<button onclick="toggleMapa('m4')">Ubicación</button>
-<div id="m4" class="mapa">
-<iframe src="https://maps.google.com/maps?q=ñuñoa&t=&z=13&output=embed"></iframe>
-</div>
-<button onclick="reservar('Aura')">Reservar</button>
-</div>
-</div>
-
-<div class="card guia">
-<img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d">
-<div class="card-content">
-<div class="tag">Emocional</div>
-<h3>Nova ✔</h3>
-<div class="perfil">5 años · 674 sesiones<br>⭐ 4.6 (143)<br>$18.990 CLP</div>
-<button onclick="toggleReseñas('r5')">Reseñas</button>
-<div id="r5" class="reseñas">Excelente conexión</div>
-<button onclick="toggleMapa('m5')">Ubicación</button>
-<div id="m5" class="mapa">
-<iframe src="https://maps.google.com/maps?q=vitacura&t=&z=13&output=embed"></iframe>
-</div>
-<button onclick="reservar('Nova')">Reservar</button>
 </div>
 </div>
 
@@ -311,7 +274,6 @@ padding:40px;
 <footer>AlmaConecta © 2026</footer>
 
 <script>
-
 let reservas=JSON.parse(localStorage.getItem("reservas"))||[];
 mostrarReservas();
 
@@ -359,7 +321,6 @@ function toggleMapa(id){
 let x=document.getElementById(id);
 x.style.display=x.style.display==="block"?"none":"block";
 }
-
 </script>
 
 </body>

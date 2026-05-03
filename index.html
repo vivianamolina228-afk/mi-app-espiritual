@@ -51,6 +51,7 @@ width:100%;
 height:100%;
 object-fit:cover;
 z-index:-2;
+filter:brightness(0.8) saturate(0.7);
 }
 
 header::after{
@@ -90,6 +91,11 @@ width:300px;
 padding:25px;
 border-radius:35px;
 box-shadow:0 8px 25px rgba(176,140,255,0.16);
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
 }
 
 .card img{
@@ -109,10 +115,11 @@ cursor:pointer;
 color:white;
 font-weight:bold;
 margin-top:10px;
+transition:0.4s;
 }
 
 button:hover{
-transform:scale(1.06);
+transform:scale(1.08);
 }
 
 input{
@@ -161,6 +168,10 @@ justify-content:center;
 margin-bottom:20px;
 }
 
+#tutorial{
+background:linear-gradient(180deg,#fcf8ff,#eef7ff);
+}
+
 footer{
 background:#b08cff;
 color:white;
@@ -178,6 +189,7 @@ text-align:center;
 <div>
 <a href="#guias">Guías</a>
 <a href="#reservas">Reservas</a>
+<a href="#tutorial">Tutorial</a>
 </div>
 </nav>
 
@@ -210,8 +222,8 @@ text-align:center;
 <h3>🌿 Luna <span class="verificado">✔</span></h3>
 <button onclick="toggleReseñas('r1')">Ver reseñas</button>
 <div id="r1" class="reseñas">
-<p>⭐ “Muy conectada y empática.”</p>
-<p>⭐ “Sesión increíble.”</p>
+<p>⭐ Muy conectada y empática</p>
+<p>⭐ Sesión increíble</p>
 </div>
 <button onclick="reservar('Luna')">Reservar</button>
 </div>
@@ -221,8 +233,8 @@ text-align:center;
 <h3>🧚 Alma <span class="verificado">✔</span></h3>
 <button onclick="toggleReseñas('r2')">Ver reseñas</button>
 <div id="r2" class="reseñas">
-<p>⭐ “Muy sanadora.”</p>
-<p>⭐ “Excelente guía.”</p>
+<p>⭐ Excelente guía</p>
+<p>⭐ Muy sanadora</p>
 </div>
 <button onclick="reservar('Alma')">Reservar</button>
 </div>
@@ -232,8 +244,8 @@ text-align:center;
 <h3>🌞 Sol <span class="verificado">✔</span></h3>
 <button onclick="toggleReseñas('r3')">Ver reseñas</button>
 <div id="r3" class="reseñas">
-<p>⭐ “Muchísima claridad.”</p>
-<p>⭐ “Recomendado.”</p>
+<p>⭐ Muchísima claridad</p>
+<p>⭐ Recomendado</p>
 </div>
 <button onclick="reservar('Sol')">Reservar</button>
 </div>
@@ -254,6 +266,46 @@ text-align:center;
 </div>
 
 <ul id="listaReservas"></ul>
+
+</div>
+
+</section>
+
+<section id="tutorial">
+
+<h2>🌙 Cómo usar AlmaConecta</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>1️⃣ Ingresa tu nombre</h3>
+<p>Personaliza tu experiencia.</p>
+</div>
+
+<div class="card">
+<h3>2️⃣ Elige fecha</h3>
+<p>Selecciona tu disponibilidad.</p>
+</div>
+
+<div class="card">
+<h3>3️⃣ Mira reseñas</h3>
+<p>Conoce experiencias previas.</p>
+</div>
+
+<div class="card">
+<h3>4️⃣ Reserva</h3>
+<p>Agenda tu sesión.</p>
+</div>
+
+<div class="card">
+<h3>5️⃣ Gestiona reservas</h3>
+<p>Oculta o reinicia historial.</p>
+</div>
+
+<div class="card">
+<h3>6️⃣ Sana</h3>
+<p>Conecta contigo.</p>
+</div>
 
 </div>
 
@@ -308,22 +360,12 @@ mostrarReservas();
 
 function toggleHistorial(){
 let lista=document.getElementById("listaReservas");
-
-if(lista.style.display==="none"){
-lista.style.display="block";
-}else{
-lista.style.display="none";
-}
+lista.style.display=lista.style.display==="none"?"block":"none";
 }
 
 function toggleReseñas(id){
 let caja=document.getElementById(id);
-
-if(caja.style.display==="block"){
-caja.style.display="none";
-}else{
-caja.style.display="block";
-}
+caja.style.display=caja.style.display==="block"?"none":"block";
 }
 
 </script>

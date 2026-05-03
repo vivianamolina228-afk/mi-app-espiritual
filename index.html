@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AlmaConecta</title>
+<title>AlmaConecta Marketplace</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
@@ -41,8 +41,8 @@ margin-left:22px;
 
 .logo{
 font-size:28px;
-color:#8b6f47;
 font-weight:bold;
+color:#8b6f47;
 }
 
 header{
@@ -69,7 +69,7 @@ max-width:800px;
 }
 
 .hero h1{
-font-size:70px;
+font-size:72px;
 }
 
 button{
@@ -97,6 +97,11 @@ background:white;
 border-radius:20px;
 overflow:hidden;
 box-shadow:0 8px 20px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
 }
 
 .card img{
@@ -115,6 +120,7 @@ padding:14px;
 margin:8px 0;
 border-radius:14px;
 border:1px solid #ddd;
+font-size:15px;
 }
 
 .reseñas{
@@ -123,6 +129,15 @@ margin-top:12px;
 padding:14px;
 background:#f8f6f1;
 border-radius:12px;
+}
+
+.tag{
+display:inline-block;
+padding:6px 12px;
+background:#f3ece1;
+border-radius:20px;
+font-size:13px;
+margin-bottom:12px;
 }
 
 #historial{
@@ -166,21 +181,21 @@ padding:40px;
 
 </style>
 </head>
-
 <body>
 
 <nav>
 <div class="logo">AlmaConecta</div>
 <div>
 <a href="#tutorial">Cómo funciona</a>
-<a href="#guias">Especialistas</a>
+<a href="#guias">Marketplace</a>
 <a href="#reservas">Reservas</a>
 </div>
 </nav>
 
 <header>
 <div class="hero">
-<h1>Reserva tu espacio de transformación</h1>
+<h1>Marketplace espiritual</h1>
+<p>Encuentra especialistas verificados para tu bienestar</p>
 <a href="#guias"><button>Explorar</button></a>
 </div>
 </header>
@@ -188,15 +203,15 @@ padding:40px;
 <section id="tutorial">
 <h2>Cómo funciona</h2>
 <div class="grid">
-<div class="card"><div class="card-content">1. Elige guía</div></div>
-<div class="card"><div class="card-content">2. Selecciona fecha y hora</div></div>
-<div class="card"><div class="card-content">3. Confirma</div></div>
+<div class="card"><div class="card-content">1. Explora especialistas</div></div>
+<div class="card"><div class="card-content">2. Filtra por necesidad</div></div>
+<div class="card"><div class="card-content">3. Reserva</div></div>
 </div>
 </section>
 
 <section id="guias">
 
-<h2>Especialistas destacados</h2>
+<h2>Especialistas</h2>
 
 <input type="text" id="nombreCliente" placeholder="Tu nombre">
 <input type="date" id="fechaReserva">
@@ -209,47 +224,71 @@ padding:40px;
 <option>19:00</option>
 </select>
 
+<select id="filtroEspecialidad" onchange="filtrarGuias()">
+<option value="todos">Todas</option>
+<option value="energia">Energía</option>
+<option value="emocional">Emocional</option>
+<option value="claridad">Claridad</option>
+</select>
+
 <div class="grid">
 
-<div class="card">
+<div class="card guia" data-especialidad="energia">
 <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330">
 <div class="card-content">
+<div class="tag">Energía</div>
 <h3>Luna ✔</h3>
-<p>Equilibrio energético</p>
 <button onclick="toggleReseñas('r1')">Reseñas</button>
-<div id="r1" class="reseñas">Excelente acompañamiento</div>
+<div id="r1" class="reseñas">Excelente guía energética</div>
 <button onclick="reservar('Luna')">Reservar</button>
 </div>
 </div>
 
-<div class="card">
+<div class="card guia" data-especialidad="emocional">
 <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9">
 <div class="card-content">
+<div class="tag">Emocional</div>
 <h3>Alma ✔</h3>
-<p>Sanación emocional</p>
 <button onclick="toggleReseñas('r2')">Reseñas</button>
-<div id="r2" class="reseñas">Muy cercana</div>
+<div id="r2" class="reseñas">Muy cercana y empática</div>
 <button onclick="reservar('Alma')">Reservar</button>
 </div>
 </div>
 
-<div class="card">
+<div class="card guia" data-especialidad="claridad">
 <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e">
 <div class="card-content">
+<div class="tag">Claridad</div>
 <h3>Sol ✔</h3>
-<p>Claridad interior</p>
 <button onclick="toggleReseñas('r3')">Reseñas</button>
 <div id="r3" class="reseñas">Transformador</div>
 <button onclick="reservar('Sol')">Reservar</button>
 </div>
 </div>
 
+<div class="card guia" data-especialidad="energia">
+<img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df">
+<div class="card-content">
+<div class="tag">Energía</div>
+<h3>Aura ✔</h3>
+<button onclick="reservar('Aura')">Reservar</button>
+</div>
 </div>
 
+<div class="card guia" data-especialidad="emocional">
+<img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d">
+<div class="card-content">
+<div class="tag">Emocional</div>
+<h3>Nova ✔</h3>
+<button onclick="reservar('Nova')">Reservar</button>
+</div>
+</div>
+
+</div>
 </section>
 
 <section id="reservas">
-<h2>Reservas</h2>
+<h2>Reservas agendadas</h2>
 
 <div id="historial">
 <button onclick="reiniciarReservas()">Reiniciar</button>
@@ -270,7 +309,6 @@ AlmaConecta © 2026
 <script>
 
 let reservas=JSON.parse(localStorage.getItem("reservas"))||[];
-
 mostrarReservas();
 
 function reservar(sanador){
@@ -287,9 +325,7 @@ return;
 let reserva=nombre+" reservó con "+sanador+" para "+fecha+" a las "+hora;
 
 reservas.push(reserva);
-
 localStorage.setItem("reservas",JSON.stringify(reservas));
-
 mostrarReservas();
 
 document.getElementById("mensajeConfirmacion").innerHTML=reserva;
@@ -320,6 +356,23 @@ mostrarReservas();
 function toggleReseñas(id){
 let caja=document.getElementById(id);
 caja.style.display=caja.style.display==="block"?"none":"block";
+}
+
+function filtrarGuias(){
+
+let filtro=document.getElementById("filtroEspecialidad").value;
+let guias=document.querySelectorAll(".guia");
+
+guias.forEach(function(guia){
+
+if(filtro==="todos"||guia.dataset.especialidad===filtro){
+guia.style.display="block";
+}else{
+guia.style.display="none";
+}
+
+});
+
 }
 
 </script>

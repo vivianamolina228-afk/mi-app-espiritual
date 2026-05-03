@@ -205,13 +205,6 @@ padding:40px;
 <option>19:00</option>
 </select>
 
-<select id="especialidadreserva">
-<option value="">tipo</option>
-<option>claridad</option>
-<option>energía</option>
-<option>emocional</option>
-</select>
-
 <select id="tipoReserva">
 <option value="">Modalidad</option>
 <option>Online</option>
@@ -327,9 +320,8 @@ let nombre=document.getElementById("nombreCliente").value;
 let fecha=document.getElementById("fechaReserva").value;
 let hora=document.getElementById("horaReserva").value;
 let tipo=document.getElementById("tipoReserva").value;
-let especialidad=document.getElementById("especialidadReserva").value;
 
-if(nombre===""||fecha===""||hora===""||tipo==="" ||especialidad===""){
+if(nombre===""||fecha===""||hora===""||tipo===""){
 alert("Completa todos los campos");
 return;
 }
@@ -358,6 +350,15 @@ lista.appendChild(item);
 });
 }
 
+function toggleReseñas(id){
+let x=document.getElementById(id);
+x.style.display=x.style.display==="block"?"none":"block";
+}
+
+function toggleMapa(id){
+let x=document.getElementById(id);
+x.style.display=x.style.display==="block"?"none":"block";
+}
 </script>
 </body>
 </html>

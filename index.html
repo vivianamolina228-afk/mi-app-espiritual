@@ -9,17 +9,8 @@
 
 <style>
 html{scroll-behavior:smooth;}
-
-body{
-margin:0;
-font-family:'Inter',sans-serif;
-background:#faf9f7;
-color:#222;
-}
-
-h1,h2,h3{
-font-family:'Playfair Display',serif;
-}
+body{margin:0;font-family:'Inter',sans-serif;background:#faf9f7;color:#222;}
+h1,h2,h3{font-family:'Playfair Display',serif;}
 
 nav{
 background:white;
@@ -32,17 +23,8 @@ box-shadow:0 2px 10px rgba(0,0,0,0.06);
 z-index:100;
 }
 
-nav a{
-text-decoration:none;
-color:#444;
-margin-left:22px;
-}
-
-.logo{
-font-size:28px;
-font-weight:bold;
-color:#8b6f47;
-}
+nav a{text-decoration:none;color:#444;margin-left:22px;}
+.logo{font-size:28px;font-weight:bold;color:#8b6f47;}
 
 header{
 height:85vh;
@@ -61,15 +43,8 @@ inset:0;
 background:rgba(255,255,255,0.55);
 }
 
-.hero{
-position:relative;
-z-index:2;
-max-width:800px;
-}
-
-.hero h1{
-font-size:72px;
-}
+.hero{position:relative;z-index:2;}
+.hero h1{font-size:72px;}
 
 button{
 padding:14px 24px;
@@ -78,11 +53,10 @@ border-radius:30px;
 background:#8b6f47;
 color:white;
 cursor:pointer;
+margin-top:8px;
 }
 
-section{
-padding:80px 60px;
-}
+section{padding:80px 60px;}
 
 .grid{
 display:grid;
@@ -96,11 +70,6 @@ background:white;
 border-radius:20px;
 overflow:hidden;
 box-shadow:0 8px 20px rgba(0,0,0,0.08);
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-8px);
 }
 
 .card img{
@@ -109,9 +78,7 @@ height:220px;
 object-fit:cover;
 }
 
-.card-content{
-padding:25px;
-}
+.card-content{padding:25px;}
 
 input,select{
 width:100%;
@@ -119,10 +86,9 @@ padding:14px;
 margin:8px 0;
 border-radius:14px;
 border:1px solid #ddd;
-font-size:15px;
 }
 
-.reseñas{
+.reseñas,.mapa{
 display:none;
 margin-top:12px;
 padding:14px;
@@ -143,24 +109,13 @@ margin-bottom:12px;
 font-size:14px;
 line-height:1.7;
 color:#555;
-margin-bottom:15px;
 }
 
-#historial{
-background:white;
-padding:30px;
-border-radius:20px;
-box-shadow:0 8px 20px rgba(0,0,0,0.06);
-}
-
-ul{
-list-style:none;
-padding:0;
-}
-
-li{
-padding:14px;
-border-bottom:1px solid #eee;
+iframe{
+width:100%;
+height:220px;
+border:none;
+border-radius:12px;
 }
 
 #confirmacion{
@@ -175,7 +130,6 @@ border-radius:20px;
 box-shadow:0 20px 40px rgba(0,0,0,0.2);
 z-index:999;
 text-align:center;
-max-width:400px;
 }
 
 footer{
@@ -186,13 +140,11 @@ padding:40px;
 }
 </style>
 </head>
-
 <body>
 
 <nav>
 <div class="logo">AlmaConecta</div>
 <div>
-<a href="#tutorial">Cómo funciona</a>
 <a href="#guias">Marketplace</a>
 <a href="#reservas">Reservas</a>
 </div>
@@ -201,19 +153,9 @@ padding:40px;
 <header>
 <div class="hero">
 <h1>Marketplace espiritual</h1>
-<p>Encuentra especialistas verificados para tu bienestar</p>
 <a href="#guias"><button>Explorar</button></a>
 </div>
 </header>
-
-<section id="tutorial">
-<h2>Cómo funciona</h2>
-<div class="grid">
-<div class="card"><div class="card-content">1. Explora especialistas</div></div>
-<div class="card"><div class="card-content">2. Filtra por necesidad</div></div>
-<div class="card"><div class="card-content">3. Reserva</div></div>
-</div>
-</section>
 
 <section id="guias">
 
@@ -223,114 +165,121 @@ padding:40px;
 <input type="date" id="fechaReserva">
 
 <select id="horaReserva">
-<option value="">Selecciona horario</option>
+<option value="">Horario</option>
 <option>10:00</option>
 <option>12:00</option>
 <option>16:00</option>
 <option>19:00</option>
 </select>
 
-<select id="filtroEspecialidad" onchange="filtrarGuias()">
-<option value="todos">Todas</option>
-<option value="energia">Energía</option>
-<option value="emocional">Emocional</option>
-<option value="claridad">Claridad</option>
+<select id="tipoReserva">
+<option value="">Modalidad</option>
+<option>Online</option>
+<option>Presencial</option>
 </select>
 
 <div class="grid">
 
-<div class="card guia" data-especialidad="energia">
+<div class="card guia">
 <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330">
 <div class="card-content">
 <div class="tag">Energía</div>
 <h3>Luna ✔</h3>
 <div class="perfil">
-Especialista en armonización energética<br>
-8 años de experiencia<br>
-1.247 sesiones<br>
-⭐ 4.8 (327 reseñas)<br>
-<strong>$24.990 CLP</strong>
+8 años · 1247 sesiones<br>
+⭐ 4.8 (327)<br>
+$24.990 CLP
 </div>
 <button onclick="toggleReseñas('r1')">Reseñas</button>
-<div id="r1" class="reseñas">
-Excelente guía energética<br>
-Muy profesional<br>
-Gran contención emocional
+<div id="r1" class="reseñas">Excelente guía energética</div>
+<button onclick="toggleMapa('m1')">Ubicación</button>
+<div id="m1" class="mapa">
+<p>Santiago Centro</p>
+<iframe src="https://maps.google.com/maps?q=santiago&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
 </div>
 <button onclick="reservar('Luna')">Reservar</button>
 </div>
 </div>
 
-<div class="card guia" data-especialidad="emocional">
+<div class="card guia">
 <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9">
 <div class="card-content">
 <div class="tag">Emocional</div>
 <h3>Alma ✔</h3>
 <div class="perfil">
-Sanación emocional profunda<br>
-11 años de experiencia<br>
-2.031 sesiones<br>
-⭐ 4.9 (514 reseñas)<br>
-<strong>$29.990 CLP</strong>
+11 años · 2031 sesiones<br>
+⭐ 4.9 (514)<br>
+$29.990 CLP
 </div>
 <button onclick="toggleReseñas('r2')">Reseñas</button>
-<div id="r2" class="reseñas">
-Muy cercana y empática<br>
-Proceso transformador<br>
-Excelente acompañamiento
+<div id="r2" class="reseñas">Muy cercana y empática</div>
+<button onclick="toggleMapa('m2')">Ubicación</button>
+<div id="m2" class="mapa">
+<p>Providencia</p>
+<iframe src="https://maps.google.com/maps?q=providencia&t=&z=13&output=embed"></iframe>
 </div>
 <button onclick="reservar('Alma')">Reservar</button>
 </div>
 </div>
 
-<div class="card guia" data-especialidad="claridad">
+<div class="card guia">
 <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e">
 <div class="card-content">
 <div class="tag">Claridad</div>
 <h3>Sol ✔</h3>
 <div class="perfil">
-Claridad interior y propósito<br>
-6 años de experiencia<br>
-893 sesiones<br>
-⭐ 4.7 (201 reseñas)<br>
-<strong>$19.990 CLP</strong>
+6 años · 893 sesiones<br>
+⭐ 4.7 (201)<br>
+$19.990 CLP
 </div>
 <button onclick="toggleReseñas('r3')">Reseñas</button>
-<div id="r3" class="reseñas">
-Muy claro y preciso<br>
-Excelente orientación
+<div id="r3" class="reseñas">Muy claro y preciso</div>
+<button onclick="toggleMapa('m3')">Ubicación</button>
+<div id="m3" class="mapa">
+<p>Las Condes</p>
+<iframe src="https://maps.google.com/maps?q=las+condes&t=&z=13&output=embed"></iframe>
 </div>
 <button onclick="reservar('Sol')">Reservar</button>
 </div>
 </div>
 
-<div class="card guia" data-especialidad="energia">
+<div class="card guia">
 <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df">
 <div class="card-content">
 <div class="tag">Energía</div>
 <h3>Aura ✔</h3>
 <div class="perfil">
-Limpieza energética avanzada<br>
-9 años de experiencia<br>
-1.588 sesiones<br>
-⭐ 4.8 (402 reseñas)<br>
-<strong>$27.990 CLP</strong>
+9 años · 1588 sesiones<br>
+⭐ 4.8 (402)<br>
+$27.990 CLP
+</div>
+<button onclick="toggleReseñas('r4')">Reseñas</button>
+<div id="r4" class="reseñas">Muy profesional</div>
+<button onclick="toggleMapa('m4')">Ubicación</button>
+<div id="m4" class="mapa">
+<p>Ñuñoa</p>
+<iframe src="https://maps.google.com/maps?q=ñuñoa&t=&z=13&output=embed"></iframe>
 </div>
 <button onclick="reservar('Aura')">Reservar</button>
 </div>
 </div>
 
-<div class="card guia" data-especialidad="emocional">
+<div class="card guia">
 <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d">
 <div class="card-content">
 <div class="tag">Emocional</div>
 <h3>Nova ✔</h3>
 <div class="perfil">
-Reconexión emocional<br>
-5 años de experiencia<br>
-674 sesiones<br>
-⭐ 4.6 (143 reseñas)<br>
-<strong>$18.990 CLP</strong>
+5 años · 674 sesiones<br>
+⭐ 4.6 (143)<br>
+$18.990 CLP
+</div>
+<button onclick="toggleReseñas('r5')">Reseñas</button>
+<div id="r5" class="reseñas">Excelente conexión</div>
+<button onclick="toggleMapa('m5')">Ubicación</button>
+<div id="m5" class="mapa">
+<p>Vitacura</p>
+<iframe src="https://maps.google.com/maps?q=vitacura&t=&z=13&output=embed"></iframe>
 </div>
 <button onclick="reservar('Nova')">Reservar</button>
 </div>
@@ -340,12 +289,8 @@ Reconexión emocional<br>
 </section>
 
 <section id="reservas">
-<h2>Reservas agendadas</h2>
-
-<div id="historial">
-<button onclick="reiniciarReservas()">Reiniciar</button>
+<h2>Reservas</h2>
 <ul id="listaReservas"></ul>
-</div>
 </section>
 
 <div id="confirmacion">
@@ -354,9 +299,7 @@ Reconexión emocional<br>
 <button onclick="cerrarConfirmacion()">Cerrar</button>
 </div>
 
-<footer>
-AlmaConecta © 2026
-</footer>
+<footer>AlmaConecta © 2026</footer>
 
 <script>
 
@@ -364,16 +307,18 @@ let reservas=JSON.parse(localStorage.getItem("reservas"))||[];
 mostrarReservas();
 
 function reservar(sanador){
+
 let nombre=document.getElementById("nombreCliente").value;
 let fecha=document.getElementById("fechaReserva").value;
 let hora=document.getElementById("horaReserva").value;
+let tipo=document.getElementById("tipoReserva").value;
 
-if(nombre===""||fecha===""||hora===""){
+if(nombre===""||fecha===""||hora===""||tipo===""){
 alert("Completa todos los campos");
 return;
 }
 
-let reserva=nombre+" reservó con "+sanador+" para "+fecha+" a las "+hora;
+let reserva=nombre+" reservó con "+sanador+" para "+fecha+" a las "+hora+" ("+tipo+")";
 
 reservas.push(reserva);
 localStorage.setItem("reservas",JSON.stringify(reservas));
@@ -385,7 +330,6 @@ document.getElementById("confirmacion").style.display="block";
 
 function cerrarConfirmacion(){
 document.getElementById("confirmacion").style.display="none";
-window.location.href="#reservas";
 }
 
 function mostrarReservas(){
@@ -398,28 +342,14 @@ lista.appendChild(item);
 });
 }
 
-function reiniciarReservas(){
-reservas=[];
-localStorage.setItem("reservas",JSON.stringify(reservas));
-mostrarReservas();
-}
-
 function toggleReseñas(id){
-let caja=document.getElementById(id);
-caja.style.display=caja.style.display==="block"?"none":"block";
+let x=document.getElementById(id);
+x.style.display=x.style.display==="block"?"none":"block";
 }
 
-function filtrarGuias(){
-let filtro=document.getElementById("filtroEspecialidad").value;
-let guias=document.querySelectorAll(".guia");
-
-guias.forEach(function(guia){
-if(filtro==="todos"||guia.dataset.especialidad===filtro){
-guia.style.display="block";
-}else{
-guia.style.display="none";
-}
-});
+function toggleMapa(id){
+let x=document.getElementById(id);
+x.style.display=x.style.display==="block"?"none":"block";
 }
 
 </script>

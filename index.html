@@ -5,19 +5,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AlmaConecta</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
 
-html{scroll-behavior:smooth;}
+html{
+scroll-behavior:smooth;
+}
 
 body{
 margin:0;
-font-family:Trebuchet MS,sans-serif;
-background:linear-gradient(180deg,#fffcff,#f4efff,#eef9ff);
-color:#645b7a;
+font-family:'Inter',sans-serif;
+background:linear-gradient(180deg,#0f0d14,#1b1624,#241d30,#16141f);
+color:#d9d2e9;
+}
+
+h1,h2,h3{
+font-family:'Cormorant Garamond',serif;
+letter-spacing:1px;
 }
 
 nav{
-background:rgba(255,255,255,0.9);
+background:rgba(20,18,28,0.92);
 padding:18px;
 display:flex;
 justify-content:space-between;
@@ -25,13 +34,14 @@ position:sticky;
 top:0;
 backdrop-filter:blur(12px);
 z-index:100;
+border-bottom:1px solid rgba(190,170,255,0.15);
 }
 
 nav a{
 margin-left:18px;
 text-decoration:none;
-color:#9b79d6;
-font-weight:bold;
+color:#c9b6ff;
+font-weight:500;
 }
 
 header{
@@ -51,7 +61,7 @@ width:100%;
 height:100%;
 object-fit:cover;
 z-index:-2;
-filter:brightness(0.8) saturate(0.7);
+filter:brightness(0.35) saturate(0.6);
 }
 
 header::after{
@@ -59,18 +69,23 @@ content:"";
 position:absolute;
 width:100%;
 height:100%;
-background:rgba(180,150,255,0.28);
+background:rgba(40,22,58,0.45);
 z-index:-1;
 }
 
 .hero-btn{
-background:linear-gradient(135deg,#ffe8ff,#dff7ff);
+background:linear-gradient(135deg,#3e314f,#8e79c7);
 padding:18px 35px;
 border:none;
 border-radius:35px;
 font-size:18px;
 cursor:pointer;
-color:#8a67d1;
+color:#f4efff;
+box-shadow:0 0 25px rgba(180,140,255,0.25);
+}
+
+.hero-btn:hover{
+transform:scale(1.08);
 }
 
 section{
@@ -86,11 +101,12 @@ flex-wrap:wrap;
 }
 
 .card{
-background:white;
+background:rgba(40,33,54,0.82);
 width:300px;
 padding:25px;
-border-radius:35px;
-box-shadow:0 8px 25px rgba(176,140,255,0.16);
+border-radius:25px;
+box-shadow:0 8px 30px rgba(0,0,0,0.35);
+border:1px solid rgba(190,170,255,0.12);
 transition:0.4s;
 }
 
@@ -102,44 +118,48 @@ transform:translateY(-10px);
 width:100%;
 height:190px;
 object-fit:cover;
-border-radius:25px;
+border-radius:18px;
+filter:brightness(0.82);
 }
 
 button{
-background:linear-gradient(135deg,#d6b6ff,#a6dcff,#f7cbff);
+background:linear-gradient(135deg,#4b3b63,#9f85e8);
 border:none;
 padding:15px;
 width:100%;
-border-radius:30px;
+border-radius:25px;
 cursor:pointer;
 color:white;
 font-weight:bold;
 margin-top:10px;
-transition:0.4s;
+transition:0.35s;
 }
 
 button:hover{
 transform:scale(1.08);
+box-shadow:0 0 25px rgba(170,140,255,0.35);
 }
 
 input{
 padding:14px;
 width:250px;
-border-radius:18px;
-border:2px solid #eadcff;
+border-radius:16px;
+border:1px solid #4e4267;
 margin:10px;
+background:#1f1a2b;
+color:white;
 }
 
 .verificado{
-color:#4ec9ff;
+color:#8ed8ff;
 }
 
 #historial{
-background:white;
+background:rgba(35,29,46,0.88);
 max-width:850px;
 margin:auto;
 padding:35px;
-border-radius:35px;
+border-radius:25px;
 }
 
 ul{
@@ -149,15 +169,15 @@ padding:0;
 
 li{
 padding:12px;
-border-bottom:1px solid #eee;
+border-bottom:1px solid rgba(255,255,255,0.06);
 }
 
 .reseñas{
 display:none;
 margin-top:15px;
 padding:15px;
-background:#faf7ff;
-border-radius:20px;
+background:#1a1624;
+border-radius:18px;
 text-align:left;
 }
 
@@ -168,15 +188,16 @@ justify-content:center;
 margin-bottom:20px;
 }
 
-#tutorial{
-background:linear-gradient(180deg,#fcf8ff,#eef7ff);
-}
-
 footer{
-background:#b08cff;
-color:white;
+background:#0f0d14;
+color:#c9b6ff;
 padding:35px;
 text-align:center;
+border-top:1px solid rgba(190,170,255,0.1);
+}
+
+.tutorial-btn{
+margin-top:15px;
 }
 
 </style>
@@ -185,11 +206,11 @@ text-align:center;
 <body id="inicio">
 
 <nav>
-<div>✨ AlmaConecta</div>
+<div>✦ AlmaConecta</div>
 <div>
+<a href="#tutorial">Tutorial</a>
 <a href="#guias">Guías</a>
 <a href="#reservas">Reservas</a>
-<a href="#tutorial">Tutorial</a>
 </div>
 </nav>
 
@@ -200,13 +221,38 @@ text-align:center;
 </video>
 
 <div>
-<h1>Fluye hacia tu luz interior</h1>
-<a href="#guias">
-<button class="hero-btn">Comenzar ✨</button>
+<h1>Fluye hacia tu sombra luminosa</h1>
+<a href="#tutorial">
+<button class="hero-btn">Comenzar ✦</button>
 </a>
 </div>
 
 </header>
+
+<section id="tutorial">
+
+<h2>Guía de inicio</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>1. Elegir guía</h3>
+<a href="#guias"><button class="tutorial-btn">Ir a guías</button></a>
+</div>
+
+<div class="card">
+<h3>2. Reservar fecha</h3>
+<a href="#guias"><button class="tutorial-btn">Agendar</button></a>
+</div>
+
+<div class="card">
+<h3>3. Revisar historial</h3>
+<a href="#reservas"><button class="tutorial-btn">Ver reservas</button></a>
+</div>
+
+</div>
+
+</section>
 
 <section id="guias">
 
@@ -220,10 +266,9 @@ text-align:center;
 <div class="card">
 <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9">
 <h3>🌿 Luna <span class="verificado">✔</span></h3>
-<button onclick="toggleReseñas('r1')">Ver reseñas</button>
+<button onclick="toggleReseñas('r1')">Reseñas</button>
 <div id="r1" class="reseñas">
-<p>⭐ Muy conectada y empática</p>
-<p>⭐ Sesión increíble</p>
+<p>Muy conectada</p>
 </div>
 <button onclick="reservar('Luna')">Reservar</button>
 </div>
@@ -231,10 +276,9 @@ text-align:center;
 <div class="card">
 <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330">
 <h3>🧚 Alma <span class="verificado">✔</span></h3>
-<button onclick="toggleReseñas('r2')">Ver reseñas</button>
+<button onclick="toggleReseñas('r2')">Reseñas</button>
 <div id="r2" class="reseñas">
-<p>⭐ Excelente guía</p>
-<p>⭐ Muy sanadora</p>
+<p>Excelente guía</p>
 </div>
 <button onclick="reservar('Alma')">Reservar</button>
 </div>
@@ -242,10 +286,9 @@ text-align:center;
 <div class="card">
 <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e">
 <h3>🌞 Sol <span class="verificado">✔</span></h3>
-<button onclick="toggleReseñas('r3')">Ver reseñas</button>
+<button onclick="toggleReseñas('r3')">Reseñas</button>
 <div id="r3" class="reseñas">
-<p>⭐ Muchísima claridad</p>
-<p>⭐ Recomendado</p>
+<p>Mucha claridad</p>
 </div>
 <button onclick="reservar('Sol')">Reservar</button>
 </div>
@@ -271,48 +314,8 @@ text-align:center;
 
 </section>
 
-<section id="tutorial">
-
-<h2>🌙 Cómo usar AlmaConecta</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>1️⃣ Ingresa tu nombre</h3>
-<p>Personaliza tu experiencia.</p>
-</div>
-
-<div class="card">
-<h3>2️⃣ Elige fecha</h3>
-<p>Selecciona tu disponibilidad.</p>
-</div>
-
-<div class="card">
-<h3>3️⃣ Mira reseñas</h3>
-<p>Conoce experiencias previas.</p>
-</div>
-
-<div class="card">
-<h3>4️⃣ Reserva</h3>
-<p>Agenda tu sesión.</p>
-</div>
-
-<div class="card">
-<h3>5️⃣ Gestiona reservas</h3>
-<p>Oculta o reinicia historial.</p>
-</div>
-
-<div class="card">
-<h3>6️⃣ Sana</h3>
-<p>Conecta contigo.</p>
-</div>
-
-</div>
-
-</section>
-
 <footer>
-✨ AlmaConecta © 2026
+✦ AlmaConecta © 2026
 </footer>
 
 <script>
@@ -322,7 +325,6 @@ let reservas=JSON.parse(localStorage.getItem("reservas"))||[];
 mostrarReservas();
 
 function reservar(sanador){
-
 let nombre=document.getElementById("nombreCliente").value;
 let fecha=document.getElementById("fechaReserva").value;
 
@@ -331,20 +333,15 @@ alert("Completa nombre y fecha");
 return;
 }
 
-reservas.push(nombre+" reservó con "+sanador+" para "+fecha+" ✨");
-
+reservas.push(nombre+" reservó con "+sanador+" para "+fecha);
 localStorage.setItem("reservas",JSON.stringify(reservas));
-
 mostrarReservas();
-
 window.location.href="#reservas";
 }
 
 function mostrarReservas(){
-
 let lista=document.getElementById("listaReservas");
 lista.innerHTML="";
-
 reservas.forEach(function(r){
 let item=document.createElement("li");
 item.innerHTML=r;

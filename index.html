@@ -9,9 +9,7 @@
 
 <style>
 
-html{
-scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth;}
 
 body{
 margin:0;
@@ -29,32 +27,30 @@ background:white;
 padding:18px 60px;
 display:flex;
 justify-content:space-between;
-align-items:center;
 position:sticky;
 top:0;
-z-index:100;
 box-shadow:0 2px 10px rgba(0,0,0,0.06);
+z-index:100;
 }
 
 nav a{
 text-decoration:none;
 color:#444;
 margin-left:22px;
-font-size:15px;
 }
 
 .logo{
 font-size:28px;
-font-weight:bold;
 color:#8b6f47;
+font-weight:bold;
 }
 
 header{
 height:85vh;
 background:url('https://images.unsplash.com/photo-1506126613408-eca07ce68773') center/cover;
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:center;
 text-align:center;
 position:relative;
 }
@@ -73,53 +69,20 @@ max-width:800px;
 }
 
 .hero h1{
-font-size:72px;
-margin-bottom:20px;
-color:#2f2f2f;
+font-size:70px;
 }
 
-.hero p{
-font-size:22px;
-color:#555;
-}
-
-.hero button{
-margin-top:25px;
-padding:16px 35px;
+button{
+padding:14px 24px;
 border:none;
+border-radius:30px;
 background:#8b6f47;
 color:white;
-border-radius:30px;
 cursor:pointer;
-font-size:16px;
 }
 
 section{
 padding:80px 60px;
-}
-
-.buscador{
-max-width:700px;
-margin:auto;
-display:flex;
-gap:10px;
-}
-
-input{
-flex:1;
-padding:16px;
-border-radius:30px;
-border:1px solid #ddd;
-font-size:15px;
-}
-
-button{
-padding:14px 25px;
-border:none;
-border-radius:30px;
-background:#8b6f47;
-color:white;
-cursor:pointer;
 }
 
 .grid{
@@ -133,7 +96,7 @@ margin-top:40px;
 background:white;
 border-radius:20px;
 overflow:hidden;
-box-shadow:0 8px 20px rgba(0,0,0,0.07);
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
 }
 
 .card img{
@@ -146,24 +109,18 @@ object-fit:cover;
 padding:25px;
 }
 
-.tag{
-display:inline-block;
-padding:6px 14px;
-background:#f3ece1;
-border-radius:20px;
-font-size:13px;
-margin-bottom:15px;
-color:#8b6f47;
-}
-
-.verificado{
-color:#2a9d8f;
+input,select{
+width:100%;
+padding:14px;
+margin:8px 0;
+border-radius:14px;
+border:1px solid #ddd;
 }
 
 .reseñas{
 display:none;
-margin-top:15px;
-padding:15px;
+margin-top:12px;
+padding:14px;
 background:#f8f6f1;
 border-radius:12px;
 }
@@ -183,6 +140,21 @@ padding:0;
 li{
 padding:14px;
 border-bottom:1px solid #eee;
+}
+
+#confirmacion{
+display:none;
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:white;
+padding:35px;
+border-radius:20px;
+box-shadow:0 20px 40px rgba(0,0,0,0.2);
+z-index:999;
+text-align:center;
+max-width:400px;
 }
 
 footer{
@@ -208,40 +180,17 @@ padding:40px;
 
 <header>
 <div class="hero">
-<h1>Bienestar espiritual con confianza</h1>
-<p>Conecta con especialistas verificados para tu transformación interior.</p>
-<a href="#guias">
-<button>Explorar especialistas</button>
-</a>
+<h1>Reserva tu espacio de transformación</h1>
+<a href="#guias"><button>Explorar</button></a>
 </div>
 </header>
 
 <section id="tutorial">
 <h2>Cómo funciona</h2>
-
 <div class="grid">
-
-<div class="card">
-<div class="card-content">
-<h3>1. Descubre</h3>
-<p>Explora especialistas según tus necesidades.</p>
-</div>
-</div>
-
-<div class="card">
-<div class="card-content">
-<h3>2. Agenda</h3>
-<p>Selecciona fecha y reserva fácilmente.</p>
-</div>
-</div>
-
-<div class="card">
-<div class="card-content">
-<h3>3. Reconecta</h3>
-<p>Comienza tu proceso de bienestar.</p>
-</div>
-</div>
-
+<div class="card"><div class="card-content">1. Elige guía</div></div>
+<div class="card"><div class="card-content">2. Selecciona fecha y hora</div></div>
+<div class="card"><div class="card-content">3. Confirma</div></div>
 </div>
 </section>
 
@@ -249,23 +198,26 @@ padding:40px;
 
 <h2>Especialistas destacados</h2>
 
-<div class="buscador">
 <input type="text" id="nombreCliente" placeholder="Tu nombre">
 <input type="date" id="fechaReserva">
-</div>
+
+<select id="horaReserva">
+<option value="">Selecciona horario</option>
+<option>10:00</option>
+<option>12:00</option>
+<option>16:00</option>
+<option>19:00</option>
+</select>
 
 <div class="grid">
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330">
 <div class="card-content">
-<div class="tag">Energía</div>
-<h3>Luna <span class="verificado">✔</span></h3>
+<h3>Luna ✔</h3>
 <p>Equilibrio energético</p>
 <button onclick="toggleReseñas('r1')">Reseñas</button>
-<div id="r1" class="reseñas">
-Excelente acompañamiento
-</div>
+<div id="r1" class="reseñas">Excelente acompañamiento</div>
 <button onclick="reservar('Luna')">Reservar</button>
 </div>
 </div>
@@ -273,13 +225,10 @@ Excelente acompañamiento
 <div class="card">
 <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9">
 <div class="card-content">
-<div class="tag">Emoción</div>
-<h3>Alma <span class="verificado">✔</span></h3>
+<h3>Alma ✔</h3>
 <p>Sanación emocional</p>
 <button onclick="toggleReseñas('r2')">Reseñas</button>
-<div id="r2" class="reseñas">
-Muy cercana y clara
-</div>
+<div id="r2" class="reseñas">Muy cercana</div>
 <button onclick="reservar('Alma')">Reservar</button>
 </div>
 </div>
@@ -287,13 +236,10 @@ Muy cercana y clara
 <div class="card">
 <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e">
 <div class="card-content">
-<div class="tag">Propósito</div>
-<h3>Sol <span class="verificado">✔</span></h3>
+<h3>Sol ✔</h3>
 <p>Claridad interior</p>
 <button onclick="toggleReseñas('r3')">Reseñas</button>
-<div id="r3" class="reseñas">
-Transformador
-</div>
+<div id="r3" class="reseñas">Transformador</div>
 <button onclick="reservar('Sol')">Reservar</button>
 </div>
 </div>
@@ -303,18 +249,19 @@ Transformador
 </section>
 
 <section id="reservas">
-
-<h2>Reservas agendadas</h2>
+<h2>Reservas</h2>
 
 <div id="historial">
-
 <button onclick="reiniciarReservas()">Reiniciar</button>
-
 <ul id="listaReservas"></ul>
-
 </div>
-
 </section>
+
+<div id="confirmacion">
+<h2>Reserva confirmada ✨</h2>
+<p id="mensajeConfirmacion"></p>
+<button onclick="cerrarConfirmacion()">Cerrar</button>
+</div>
 
 <footer>
 AlmaConecta © 2026
@@ -330,25 +277,33 @@ function reservar(sanador){
 
 let nombre=document.getElementById("nombreCliente").value;
 let fecha=document.getElementById("fechaReserva").value;
+let hora=document.getElementById("horaReserva").value;
 
-if(nombre===""||fecha===""){
-alert("Completa nombre y fecha");
+if(nombre===""||fecha===""||hora===""){
+alert("Completa todos los campos");
 return;
 }
 
-reservas.push(nombre+" reservó con "+sanador+" para "+fecha);
+let reserva=nombre+" reservó con "+sanador+" para "+fecha+" a las "+hora;
+
+reservas.push(reserva);
 
 localStorage.setItem("reservas",JSON.stringify(reservas));
 
 mostrarReservas();
 
+document.getElementById("mensajeConfirmacion").innerHTML=reserva;
+document.getElementById("confirmacion").style.display="block";
+}
+
+function cerrarConfirmacion(){
+document.getElementById("confirmacion").style.display="none";
 window.location.href="#reservas";
 }
 
 function mostrarReservas(){
 let lista=document.getElementById("listaReservas");
 lista.innerHTML="";
-
 reservas.forEach(function(r){
 let item=document.createElement("li");
 item.innerHTML=r;

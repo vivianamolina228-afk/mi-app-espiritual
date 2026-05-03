@@ -6,72 +6,78 @@
 <title>AlmaConecta</title>
 
 <style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
 
 body{
-margin:0;
-font-family:Arial,sans-serif;
-background:#faf7ff;
+background:#fcfaff;
 color:#333;
 }
 
 nav{
-background:white;
-padding:18px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-box-shadow:0 2px 10px rgba(0,0,0,0.08);
+padding:20px 60px;
+background:white;
+box-shadow:0 4px 15px rgba(0,0,0,0.05);
 position:sticky;
 top:0;
+z-index:100;
 }
 
 nav h2{
-margin:0;
 color:#6a0dad;
 }
 
-nav a{
-text-decoration:none;
-color:#555;
-margin-left:20px;
-}
-
-header{
-background:linear-gradient(135deg,#7d4ca5,#d6b8ff);
-padding:100px 20px;
+.hero{
+min-height:90vh;
+display:flex;
+align-items:center;
+justify-content:center;
 text-align:center;
+padding:40px;
+background:linear-gradient(135deg,#7d4ca5,#dcbcff);
 color:white;
 }
 
-header h1{
-font-size:58px;
+.hero-content{
+max-width:800px;
+}
+
+.hero h1{
+font-size:64px;
 margin-bottom:20px;
 }
 
-header p{
-font-size:20px;
-max-width:700px;
-margin:auto;
+.hero p{
+font-size:22px;
+margin-bottom:30px;
 }
 
-.cta{
-margin-top:30px;
+.hero button{
 background:white;
 color:#6a0dad;
-padding:15px 30px;
+padding:16px 35px;
 border:none;
-border-radius:12px;
+border-radius:14px;
 font-size:16px;
 cursor:pointer;
 }
 
 section{
-padding:70px 20px;
+padding:90px 40px;
 text-align:center;
 }
 
 h2{
+font-size:38px;
 color:#6a0dad;
+margin-bottom:40px;
 }
 
 .grid{
@@ -83,23 +89,24 @@ flex-wrap:wrap;
 
 .card{
 background:white;
+padding:30px;
 width:280px;
-padding:25px;
-border-radius:18px;
-box-shadow:0 5px 18px rgba(0,0,0,0.08);
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
 transition:0.3s;
 }
 
 .card:hover{
-transform:translateY(-8px);
+transform:translateY(-10px);
 }
 
 input{
-padding:14px;
-width:260px;
-border-radius:10px;
+padding:15px;
+width:280px;
+border-radius:12px;
 border:1px solid #ccc;
-margin-bottom:30px;
+margin-bottom:35px;
+font-size:16px;
 }
 
 button{
@@ -107,35 +114,39 @@ background:#7d4ca5;
 color:white;
 border:none;
 padding:14px;
-border-radius:10px;
+border-radius:12px;
 width:100%;
 cursor:pointer;
 }
 
 button:hover{
-background:#63358a;
+background:#5e2f88;
 }
 
 #historial{
-background:white;
-max-width:700px;
+max-width:800px;
 margin:auto;
-padding:25px;
-border-radius:18px;
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
 }
 
 ul{
 list-style:none;
-padding:0;
+}
+
+li{
+padding:12px;
+border-bottom:1px solid #eee;
 }
 
 footer{
 background:#2d183f;
 color:white;
-text-align:center;
 padding:35px;
+text-align:center;
 }
-
 </style>
 </head>
 
@@ -143,49 +154,46 @@ padding:35px;
 
 <nav>
 <h2>✨ AlmaConecta</h2>
-<div>
-<a href="#">Inicio</a>
-<a href="#">Guías</a>
-<a href="#">Reservas</a>
-</div>
 </nav>
 
-<header>
-<h1>Conecta con tu bienestar interior</h1>
+<div class="hero">
+<div class="hero-content">
+<h1>Reconecta contigo</h1>
 <p>
-Encuentra acompañamiento espiritual confiable,
-personalizado y accesible desde cualquier lugar.
+Reserva sesiones con guías espirituales verificados
+y comienza tu proceso de bienestar interior.
 </p>
-<button class="cta">Comenzar ahora</button>
-</header>
+<button onclick="window.scrollTo(0,900)">Explorar guías</button>
+</div>
+</div>
 
 <section>
-<h2>Cómo funciona</h2>
+<h2>¿Por qué AlmaConecta?</h2>
 
 <div class="grid">
 
 <div class="card">
-<h3>1️⃣ Explora</h3>
-<p>Conoce guías espirituales verificados.</p>
+<h3>🔒 Confianza</h3>
+<p>Perfiles validados.</p>
 </div>
 
 <div class="card">
-<h3>2️⃣ Reserva</h3>
-<p>Agenda fácilmente tu sesión.</p>
+<h3>💫 Cercanía</h3>
+<p>Acompañamiento personalizado.</p>
 </div>
 
 <div class="card">
-<h3>3️⃣ Sana</h3>
-<p>Recibe acompañamiento personalizado.</p>
+<h3>🌍 Accesibilidad</h3>
+<p>Disponible desde cualquier lugar.</p>
 </div>
 
 </div>
 </section>
 
 <section>
-<h2>Nuestros guías</h2>
+<h2>Reserva tu sesión</h2>
 
-<input type="text" id="nombreCliente" placeholder="Tu nombre">
+<input type="text" id="nombreCliente" placeholder="Escribe tu nombre">
 
 <div class="grid">
 
@@ -215,7 +223,7 @@ personalizado y accesible desde cualquier lugar.
 
 <section>
 <div id="historial">
-<h2>Reservas</h2>
+<h2>Reservas registradas</h2>
 <ul id="listaReservas"></ul>
 </div>
 </section>
@@ -226,15 +234,15 @@ personalizado y accesible desde cualquier lugar.
 <div class="grid">
 
 <div class="card">
-<p>"Una experiencia muy sanadora."</p>
+<p>"Me sentí guiada desde la primera sesión."</p>
 </div>
 
 <div class="card">
-<p>"Simple, clara y confiable."</p>
+<p>"Una experiencia clara y profesional."</p>
 </div>
 
 <div class="card">
-<p>"Me sentí acompañada."</p>
+<p>"Muy fácil de usar."</p>
 </div>
 
 </div>

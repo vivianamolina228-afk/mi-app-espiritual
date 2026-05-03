@@ -13,32 +13,31 @@ scroll-behavior:smooth;
 
 body{
 margin:0;
-font-family:Trebuchet MS, sans-serif;
-background:#fff9ff;
-color:#5b4b6b;
+font-family:'Trebuchet MS',sans-serif;
+background:linear-gradient(180deg,#fefcff,#f6f0ff,#eef7ff);
+color:#645b7a;
 }
 
 nav{
-background:rgba(255,255,255,0.9);
+background:rgba(255,255,255,0.88);
 padding:18px;
 display:flex;
 justify-content:space-between;
 align-items:center;
 position:sticky;
 top:0;
-backdrop-filter:blur(10px);
+backdrop-filter:blur(14px);
 z-index:100;
 }
 
 nav h2{
-margin:0;
-color:#b56eff;
+color:#b68cff;
 }
 
 nav a{
 text-decoration:none;
-color:#8a63b5;
-margin-left:20px;
+margin-left:18px;
+color:#8a77c5;
 font-weight:bold;
 }
 
@@ -55,48 +54,45 @@ color:white;
 
 header video{
 position:absolute;
-top:0;
-left:0;
 width:100%;
 height:100%;
 object-fit:cover;
 z-index:-2;
+filter:brightness(0.8) saturate(0.7);
 }
 
 header::after{
 content:"";
 position:absolute;
-top:0;
-left:0;
 width:100%;
 height:100%;
-background:rgba(92,43,145,0.45);
+background:rgba(142,111,255,0.28);
 z-index:-1;
 }
 
 .hero-content{
-max-width:700px;
-padding:20px;
+max-width:750px;
 }
 
 header h1{
-font-size:64px;
-margin-bottom:20px;
-}
-
-header p{
-font-size:22px;
+font-size:68px;
 }
 
 .hero-btn{
-background:#ffd6fa;
-color:#8a46cc;
-padding:16px 30px;
+background:linear-gradient(135deg,#ffe8ff,#dff8ff,#e5d8ff);
+color:#7b59c7;
+padding:18px 35px;
 border:none;
-border-radius:30px;
+border-radius:40px;
 font-size:18px;
 cursor:pointer;
-margin-top:20px;
+transition:0.4s;
+box-shadow:0 0 25px rgba(255,255,255,0.5);
+}
+
+.hero-btn:hover{
+transform:scale(1.12) translateY(-4px);
+box-shadow:0 0 35px rgba(255,255,255,0.8);
 }
 
 section{
@@ -105,68 +101,75 @@ text-align:center;
 }
 
 h2{
-color:#b56eff;
-font-size:36px;
+color:#b08cff;
+font-size:38px;
 }
 
 .grid{
 display:flex;
 justify-content:center;
-gap:25px;
+gap:30px;
 flex-wrap:wrap;
 }
 
 .card{
-background:white;
-width:280px;
+background:rgba(255,255,255,0.92);
+width:300px;
 padding:25px;
-border-radius:30px;
-box-shadow:0 8px 20px rgba(181,110,255,0.15);
-transition:0.3s;
+border-radius:35px;
+box-shadow:0 10px 25px rgba(176,140,255,0.18);
+transition:0.4s;
 }
 
 .card:hover{
-transform:translateY(-10px) rotate(1deg);
+transform:translateY(-12px) rotate(1deg);
 }
 
 .card img{
 width:100%;
 height:190px;
 object-fit:cover;
-border-radius:20px;
+border-radius:25px;
 }
 
 input{
-padding:15px;
+padding:14px;
 width:260px;
-border-radius:20px;
-border:2px solid #e9d2ff;
-margin-bottom:30px;
-font-size:16px;
+border-radius:18px;
+border:2px solid #e8ddff;
+margin:10px;
 }
 
 button{
-background:linear-gradient(135deg,#d69cff,#b56eff);
+background:linear-gradient(135deg,#d5b6ff,#9fdcff,#f4c7ff);
 color:white;
 border:none;
-padding:14px;
-border-radius:25px;
+padding:16px;
+border-radius:30px;
 width:100%;
 cursor:pointer;
-font-size:15px;
+font-size:16px;
+font-weight:bold;
+transition:0.4s;
+box-shadow:0 0 18px rgba(190,170,255,0.4);
 }
 
 button:hover{
-transform:scale(1.05);
+transform:scale(1.10) translateY(-5px);
+box-shadow:0 0 28px rgba(190,170,255,0.8);
+}
+
+.verificado{
+color:#4ec9ff;
+font-size:18px;
 }
 
 #historial{
 background:white;
-max-width:700px;
+max-width:800px;
 margin:auto;
-padding:30px;
-border-radius:30px;
-box-shadow:0 8px 20px rgba(181,110,255,0.12);
+padding:35px;
+border-radius:35px;
 }
 
 ul{
@@ -174,19 +177,16 @@ list-style:none;
 padding:0;
 }
 
-footer{
-background:#b56eff;
-color:white;
-text-align:center;
-padding:35px;
+li{
+padding:12px;
+border-bottom:1px solid #f0ebff;
 }
 
-.volver{
-display:inline-block;
-margin-top:30px;
-text-decoration:none;
-color:#b56eff;
-font-weight:bold;
+footer{
+background:#b08cff;
+color:white;
+padding:35px;
+text-align:center;
 }
 
 </style>
@@ -198,9 +198,8 @@ font-weight:bold;
 <h2>✨ AlmaConecta</h2>
 <div>
 <a href="#inicio">Inicio</a>
-<a href="#como">Magia</a>
 <a href="#guias">Guías</a>
-<a href="#testimonios">Voces</a>
+<a href="#reservas">Reservas</a>
 </div>
 </nav>
 
@@ -211,54 +210,27 @@ font-weight:bold;
 </video>
 
 <div class="hero-content">
-<h1>Conecta con tu luz interior</h1>
-<p>
-Un espacio mágico para sanar, reconectar y florecer.
-</p>
-
+<h1>Fluye hacia tu luz interior</h1>
+<p>Un refugio etéreo para sanar, transformar y reconectar.</p>
 <a href="#guias">
-<button class="hero-btn">Comenzar viaje ✨</button>
+<button class="hero-btn">Iniciar experiencia ✨</button>
 </a>
 </div>
 
 </header>
 
-<section id="como">
-<h2>Tu experiencia</h2>
-
-<div class="grid">
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1518562180175-34a163b1a9a6">
-<h3>🌙 Descubre</h3>
-<p>Explora energías afines.</p>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2">
-<h3>🦋 Reserva</h3>
-<p>Elige tu guía ideal.</p>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15">
-<h3>✨ Transforma</h3>
-<p>Inicia tu sanación.</p>
-</div>
-
-</div>
-</section>
-
 <section id="guias">
-<h2>Nuestros guías mágicos</h2>
 
-<input type="text" id="nombreCliente" placeholder="Escribe tu nombre">
+<h2>Guías verificados</h2>
+
+<input type="text" id="nombreCliente" placeholder="Tu nombre">
+<input type="date" id="fechaReserva">
 
 <div class="grid">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df">
-<h3>🌿 Luna</h3>
+<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9">
+<h3>🌿 Luna <span class="verificado">✔</span></h3>
 <p>⭐ 4.9</p>
 <p>Equilibrio energético</p>
 <button onclick="reservar('Luna')">Reservar ✨</button>
@@ -266,7 +238,7 @@ Un espacio mágico para sanar, reconectar y florecer.
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330">
-<h3>🧚 Alma</h3>
+<h3>🧚 Alma <span class="verificado">✔</span></h3>
 <p>⭐ 4.8</p>
 <p>Sanación emocional</p>
 <button onclick="reservar('Alma')">Reservar ✨</button>
@@ -274,42 +246,23 @@ Un espacio mágico para sanar, reconectar y florecer.
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e">
-<h3>🌞 Sol</h3>
+<h3>🌞 Sol <span class="verificado">✔</span></h3>
 <p>⭐ 5.0</p>
 <p>Claridad interior</p>
 <button onclick="reservar('Sol')">Reservar ✨</button>
 </div>
 
 </div>
+
 </section>
 
-<section>
+<section id="reservas">
+
 <div id="historial">
-<h2>🌸 Reservas</h2>
+<h2>Reservas agendadas</h2>
 <ul id="listaReservas"></ul>
 </div>
-</section>
 
-<section id="testimonios">
-<h2>Voces del alma</h2>
-
-<div class="grid">
-
-<div class="card">
-<p>"Una experiencia encantadora."</p>
-</div>
-
-<div class="card">
-<p>"Se siente como entrar a otro mundo."</p>
-</div>
-
-<div class="card">
-<p>"Muy mágica y reconfortante."</p>
-</div>
-
-</div>
-
-<a class="volver" href="#inicio">⬆ Volver arriba</a>
 </section>
 
 <footer>
@@ -323,23 +276,31 @@ let reservas = JSON.parse(localStorage.getItem("reservas")) || [];
 mostrarReservas();
 
 function reservar(sanador){
+
 let nombre=document.getElementById("nombreCliente").value;
+let fecha=document.getElementById("fechaReserva").value;
 
 if(nombre===""){
 alert("Escribe tu nombre");
 return;
 }
 
-reservas.push(nombre+" reservó con "+sanador+" ✨");
+if(fecha===""){
+alert("Selecciona una fecha");
+return;
+}
+
+reservas.push(nombre+" reservó con "+sanador+" para "+fecha+" ✨");
 
 localStorage.setItem("reservas",JSON.stringify(reservas));
 
 mostrarReservas();
 
-window.location.href="#testimonios";
+window.location.href="#reservas";
 }
 
 function mostrarReservas(){
+
 let lista=document.getElementById("listaReservas");
 lista.innerHTML="";
 
@@ -348,6 +309,7 @@ let item=document.createElement("li");
 item.innerHTML=reserva;
 lista.appendChild(item);
 });
+
 }
 
 </script>

@@ -6,250 +6,217 @@
 <title>AlmaConecta</title>
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background:
+    radial-gradient(circle at top left, #efe1ff, transparent 40%),
+    radial-gradient(circle at bottom right, #f7dfff, transparent 35%),
+    #faf7ff;
+    color: #333;
 }
 
-body{
-background:#fcfaff;
-color:#333;
+header {
+    background: linear-gradient(135deg, #7d4ca5, #caa8ff);
+    color: white;
+    text-align: center;
+    padding: 90px 20px;
+    position: relative;
+    overflow: hidden;
 }
 
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 60px;
-background:white;
-box-shadow:0 4px 15px rgba(0,0,0,0.05);
-position:sticky;
-top:0;
-z-index:100;
+header h1 {
+    font-size: 55px;
+    margin-bottom: 15px;
 }
 
-nav h2{
-color:#6a0dad;
+header p {
+    max-width: 700px;
+    margin: auto;
+    font-size: 20px;
 }
 
-.hero{
-min-height:90vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:40px;
-background:linear-gradient(135deg,#7d4ca5,#dcbcff);
-color:white;
+section {
+    padding: 60px 20px;
+    text-align: center;
 }
 
-.hero-content{
-max-width:800px;
+h2 {
+    color: #6a0dad;
 }
 
-.hero h1{
-font-size:64px;
-margin-bottom:20px;
+.beneficios,
+.sanadores {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
 }
 
-.hero p{
-font-size:22px;
-margin-bottom:30px;
+.card,
+.sanador {
+    background: white;
+    width: 280px;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.hero button{
-background:white;
-color:#6a0dad;
-padding:16px 35px;
-border:none;
-border-radius:14px;
-font-size:16px;
-cursor:pointer;
+.card:hover,
+.sanador:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 12px 25px rgba(0,0,0,0.12);
 }
 
-section{
-padding:90px 40px;
-text-align:center;
+input {
+    padding: 14px;
+    width: 260px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 30px;
+    font-size: 16px;
 }
 
-h2{
-font-size:38px;
-color:#6a0dad;
-margin-bottom:40px;
+button {
+    background: #7d4ca5;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 10px;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 15px;
 }
 
-.grid{
-display:flex;
-justify-content:center;
-gap:25px;
-flex-wrap:wrap;
+button:hover {
+    background: #63358a;
+    transform: scale(1.04);
 }
 
-.card{
-background:white;
-padding:30px;
-width:280px;
-border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
-transition:0.3s;
+#historial {
+    background: white;
+    max-width: 700px;
+    margin: auto;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.08);
 }
 
-.card:hover{
-transform:translateY(-10px);
+ul {
+    list-style: none;
+    padding: 0;
 }
 
-input{
-padding:15px;
-width:280px;
-border-radius:12px;
-border:1px solid #ccc;
-margin-bottom:35px;
-font-size:16px;
+li {
+    padding: 10px;
 }
 
-button{
-background:#7d4ca5;
-color:white;
-border:none;
-padding:14px;
-border-radius:12px;
-width:100%;
-cursor:pointer;
-}
-
-button:hover{
-background:#5e2f88;
-}
-
-#historial{
-max-width:800px;
-margin:auto;
-background:white;
-padding:30px;
-border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
-}
-
-ul{
-list-style:none;
-}
-
-li{
-padding:12px;
-border-bottom:1px solid #eee;
-}
-
-footer{
-background:#2d183f;
-color:white;
-padding:35px;
-text-align:center;
+footer {
+    background: #2d183f;
+    color: white;
+    text-align: center;
+    padding: 35px;
+    margin-top: 40px;
 }
 </style>
 </head>
 
 <body>
 
-<nav>
-<h2>✨ AlmaConecta</h2>
-</nav>
-
-<div class="hero">
-<div class="hero-content">
-<h1>Reconecta contigo</h1>
-<p>
-Reserva sesiones con guías espirituales verificados
-y comienza tu proceso de bienestar interior.
-</p>
-<button onclick="window.scrollTo(0,900)">Explorar guías</button>
-</div>
-</div>
+<header>
+    <h1>✨ AlmaConecta ✨</h1>
+    <p>
+        La plataforma digital que conecta personas con
+        guías espirituales verificados para sanar,
+        crecer y reconectar consigo mismas.
+    </p>
+</header>
 
 <section>
-<h2>¿Por qué AlmaConecta?</h2>
+    <h2>¿Por qué elegirnos?</h2>
 
-<div class="grid">
+    <div class="beneficios">
 
-<div class="card">
-<h3>🔒 Confianza</h3>
-<p>Perfiles validados.</p>
-</div>
+        <div class="card">
+            <h3>🔒 Confianza</h3>
+            <p>Perfiles verificados y reputación transparente.</p>
+        </div>
 
-<div class="card">
-<h3>💫 Cercanía</h3>
-<p>Acompañamiento personalizado.</p>
-</div>
+        <div class="card">
+            <h3>💫 Personalización</h3>
+            <p>Encuentra el acompañamiento ideal.</p>
+        </div>
 
-<div class="card">
-<h3>🌍 Accesibilidad</h3>
-<p>Disponible desde cualquier lugar.</p>
-</div>
+        <div class="card">
+            <h3>🌍 Acceso inmediato</h3>
+            <p>Reserva desde cualquier lugar.</p>
+        </div>
 
-</div>
+    </div>
 </section>
 
 <section>
-<h2>Reserva tu sesión</h2>
+    <h2>Reserva tu sesión</h2>
 
-<input type="text" id="nombreCliente" placeholder="Escribe tu nombre">
+    <input type="text" id="nombreCliente" placeholder="Escribe tu nombre">
 
-<div class="grid">
+    <div class="sanadores">
 
-<div class="card">
-<h3>🌿 Luna</h3>
-<p>⭐ 4.9</p>
-<p>Equilibrio energético</p>
-<button onclick="reservar('Luna')">Reservar</button>
-</div>
+        <div class="sanador">
+            <h3>🌿 Luna</h3>
+            <p>⭐ 4.9 (128 sesiones)</p>
+            <p>Equilibrio energético</p>
+            <button onclick="reservar('Luna')">✨ Reservar sesión</button>
+        </div>
 
-<div class="card">
-<h3>💖 Alma</h3>
-<p>⭐ 4.8</p>
-<p>Sanación emocional</p>
-<button onclick="reservar('Alma')">Reservar</button>
-</div>
+        <div class="sanador">
+            <h3>💖 Alma</h3>
+            <p>⭐ 4.8 (97 sesiones)</p>
+            <p>Sanación emocional</p>
+            <button onclick="reservar('Alma')">✨ Reservar sesión</button>
+        </div>
 
-<div class="card">
-<h3>🌟 Sol</h3>
-<p>⭐ 5.0</p>
-<p>Propósito de vida</p>
-<button onclick="reservar('Sol')">Reservar</button>
-</div>
+        <div class="sanador">
+            <h3>🌟 Sol</h3>
+            <p>⭐ 5.0 (143 sesiones)</p>
+            <p>Propósito de vida</p>
+            <button onclick="reservar('Sol')">✨ Reservar sesión</button>
+        </div>
 
-</div>
+    </div>
 </section>
 
 <section>
-<div id="historial">
-<h2>Reservas registradas</h2>
-<ul id="listaReservas"></ul>
-</div>
+    <div id="historial">
+        <h2>📋 Reservas registradas</h2>
+        <ul id="listaReservas"></ul>
+    </div>
 </section>
 
 <section>
-<h2>Testimonios</h2>
+    <h2>Experiencias</h2>
 
-<div class="grid">
+    <div class="beneficios">
 
-<div class="card">
-<p>"Me sentí guiada desde la primera sesión."</p>
-</div>
+        <div class="card">
+            <p>"Me ayudó a reconectarme conmigo."</p>
+        </div>
 
-<div class="card">
-<p>"Una experiencia clara y profesional."</p>
-</div>
+        <div class="card">
+            <p>"Muy intuitiva y confiable."</p>
+        </div>
 
-<div class="card">
-<p>"Muy fácil de usar."</p>
-</div>
+        <div class="card">
+            <p>"Una experiencia transformadora."</p>
+        </div>
 
-</div>
+    </div>
 </section>
 
 <footer>
-AlmaConecta © 2026
+    AlmaConecta © 2026
 </footer>
 
 <script>
@@ -258,30 +225,30 @@ let reservas = JSON.parse(localStorage.getItem("reservas")) || [];
 
 mostrarReservas();
 
-function reservar(sanador){
-let nombre=document.getElementById("nombreCliente").value;
+function reservar(sanador) {
+    let nombre = document.getElementById("nombreCliente").value;
 
-if(nombre===""){
-alert("Escribe tu nombre");
-return;
+    if (nombre === "") {
+        alert("Escribe tu nombre");
+        return;
+    }
+
+    reservas.push(nombre + " reservó con " + sanador + " 💫");
+
+    localStorage.setItem("reservas", JSON.stringify(reservas));
+
+    mostrarReservas();
 }
 
-reservas.push(nombre+" reservó con "+sanador+" 💫");
+function mostrarReservas() {
+    let lista = document.getElementById("listaReservas");
+    lista.innerHTML = "";
 
-localStorage.setItem("reservas",JSON.stringify(reservas));
-
-mostrarReservas();
-}
-
-function mostrarReservas(){
-let lista=document.getElementById("listaReservas");
-lista.innerHTML="";
-
-reservas.forEach(function(reserva){
-let item=document.createElement("li");
-item.innerHTML=reserva;
-lista.appendChild(item);
-});
+    reservas.forEach(function(reserva) {
+        let item = document.createElement("li");
+        item.innerHTML = reserva;
+        lista.appendChild(item);
+    });
 }
 
 </script>

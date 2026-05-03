@@ -393,17 +393,30 @@ function toggleMapa(id){
 let x=document.getElementById(id);
 x.style.display=x.style.display==="block"?"none":"block";
 }
-
-</script>
 function filtrarDesdeBoton(tipo){
 
-document.getElementById("filtroEspecialidad").value=tipo;
+document.getElementById("filtroEspecialidad").value = tipo;
 
-let guias=document.querySelectorAll(".guia");
+filtrarEspecialidad();
+
+window.location.href="#guias";
+}
+
+function filtrarEspecialidad(){
+
+let filtro = document.getElementById("filtroEspecialidad").value;
+let guias = document.querySelectorAll(".guia");
 
 guias.forEach(function(guia){
 
-if(guia.dataset.especialidad===tipo){
+let especialidad = guia.querySelector(".tag").innerText.toLowerCase();
+
+if(
+filtro==="todos" ||
+(filtro==="energia" && especialidad.includes("energ")) ||
+(filtro==="emocional" && especialidad.includes("emoc")) ||
+(filtro==="claridad" && especialidad.includes("clar"))
+){
 guia.style.display="block";
 }else{
 guia.style.display="none";
@@ -411,7 +424,7 @@ guia.style.display="none";
 
 });
 
-window.location.href="#guias";
 }
+</script>
 </body>
 </html>

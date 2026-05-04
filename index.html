@@ -3,55 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AlmaConecta</title>
+<title>AlmaConecta Marketplace</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700&family=Cormorant+Garamond:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 html{scroll-behavior:smooth;}
-
-body{
-margin:0;
-font-family:'Manrope',sans-serif;
-background:#f7f3ee;
-color:#2f2b27;
-}
-
-h1,h2,h3{
-font-family:'Cormorant Garamond',serif;
-font-weight:700;
-}
+body{margin:0;font-family:'Inter',sans-serif;background:#faf9f7;color:#222;}
+h1,h2,h3{font-family:'Playfair Display',serif;}
 
 nav{
-background:rgba(247,243,238,0.95);
-backdrop-filter:blur(8px);
-padding:20px 60px;
+background:white;
+padding:18px 60px;
 display:flex;
 justify-content:space-between;
 position:sticky;
 top:0;
+box-shadow:0 2px 10px rgba(0,0,0,0.06);
 z-index:100;
-border-bottom:1px solid #e7ddd1;
 }
 
-nav a{
-text-decoration:none;
-color:#5f584f;
-margin-left:24px;
-font-weight:500;
-}
-
-.logo{
-font-size:30px;
-color:#7b6854;
-}
+nav a{text-decoration:none;color:#444;margin-left:22px;}
+.logo{font-size:28px;font-weight:bold;color:#8b6f47;}
 
 header{
-height:88vh;
-background:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb') center/cover;
+height:85vh;
+background:url('https://images.unsplash.com/photo-1506126613408-eca07ce68773') center/cover;
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:center;
 text-align:center;
 position:relative;
 }
@@ -60,101 +40,91 @@ header::after{
 content:"";
 position:absolute;
 inset:0;
-background:rgba(247,243,238,0.35);
+background:rgba(255,255,255,0.55);
 }
 
-.hero{
-position:relative;
-z-index:2;
-max-width:850px;
-}
-
-.hero h1{
-font-size:84px;
-margin:0;
-}
-
-.hero p{
-font-size:22px;
-color:#544d45;
-}
+.hero{position:relative;z-index:2;}
+.hero h1{font-size:72px;}
 
 button{
-padding:14px 26px;
+padding:14px 24px;
 border:none;
-border-radius:40px;
-background:#8b7765;
+border-radius:30px;
+background:#8b6f47;
 color:white;
 cursor:pointer;
-font-weight:500;
-transition:0.3s;
+margin-top:8px;
 }
 
-button:hover{
-background:#6f5e4f;
-}
-
-section{
-padding:90px 70px;
-}
+section{padding:80px 60px;}
 
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:28px;
+gap:30px;
 margin-top:40px;
 }
 
 .card{
-background:#fffdfa;
-border-radius:22px;
+background:white;
+border-radius:20px;
 overflow:hidden;
-box-shadow:0 12px 28px rgba(80,60,40,0.08);
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
 }
 
 .card img{
 width:100%;
-height:240px;
+height:220px;
 object-fit:cover;
 }
 
-.card-content{
-padding:26px;
+.card-content{padding:25px;}
+
+input,select{
+width:100%;
+padding:14px;
+margin:8px 0;
+border-radius:14px;
+border:1px solid #ddd;
+}
+
+.reseñas,.mapa{
+display:none;
+margin-top:12px;
+padding:14px;
+background:#f8f6f1;
+border-radius:12px;
+}
+.perfil-completo{
+display:none;
+margin-top:14px;
+padding:16px;
+background:#f7f4ee;
+border-radius:14px;
+font-size:14px;
+line-height:1.7;
 }
 
 .tag{
 display:inline-block;
-padding:8px 14px;
+padding:6px 12px;
+background:#f3ece1;
 border-radius:20px;
-background:#efe6da;
-color:#7b6854;
 font-size:13px;
 margin-bottom:12px;
 }
 
-input,select{
-width:100%;
-padding:15px;
-margin:10px 0;
-border:1px solid #ddd2c6;
-border-radius:14px;
-background:white;
-font-size:15px;
-}
-
-.reseñas,.mapa,.perfil-completo{
-display:none;
-background:#f3ece3;
-padding:14px;
-border-radius:14px;
-margin-top:12px;
+.perfil{
+font-size:14px;
+line-height:1.7;
+color:#555;
 }
 
 iframe{
 width:100%;
 height:220px;
 border:none;
-border-radius:14px;
+border-radius:12px;
 }
 
 #confirmacion{
@@ -165,16 +135,17 @@ left:50%;
 transform:translate(-50%,-50%);
 background:white;
 padding:35px;
-border-radius:24px;
-box-shadow:0 18px 50px rgba(0,0,0,0.18);
+border-radius:20px;
+box-shadow:0 20px 40px rgba(0,0,0,0.2);
 z-index:999;
+text-align:center;
 }
 
 footer{
-background:#d9cfc2;
-padding:50px;
+background:#222;
+color:white;
 text-align:center;
-color:#4a433c;
+padding:40px;
 }
 </style>
 </head>
@@ -186,107 +157,282 @@ color:#4a433c;
 <a href="#">Inicio</a>
 <a href="#tutorial">Tutorial</a>
 <a href="#guias">Marketplace</a>
-<a href="#planes">Planes</a>
+<a href="#reservas">Reservas</a>
 <a href="#cuenta">Mi Cuenta</a>
+<a href="#planes">Planes</a>
 </div>
 </nav>
 
 <header>
 <div class="hero">
-<h1>Bienestar con intención</h1>
-<p>Conecta con especialistas cuidadosamente seleccionados</p>
+<h1>Marketplace espiritual</h1>
 <a href="#tutorial"><button>Explorar</button></a>
 </div>
 </header>
 
 <section id="tutorial">
-<h2>Cómo funciona</h2>
-<div class="grid">
-<div class="card"><div class="card-content"><h3>Explora</h3><p>Encuentra especialistas.</p></div></div>
-<div class="card"><div class="card-content"><h3>Reserva</h3><p>Elige modalidad y horario.</p></div></div>
-<div class="card"><div class="card-content"><h3>Conecta</h3><p>Comienza tu proceso.</p></div></div>
-</div>
-</section>
+<h2 style="text-align:center;">Cómo funciona AlmaConecta</h2>
 
+<div class="grid">
+
+<div class="card">
+<div class="card-content">
+<h3>1. Explora especialistas</h3>
+<p>Descubre terapeutas verificados.</p>
+<a href="#guias"><button>Explorar</button></a>
+</div>
+</div>
+
+<div class="card">
+<div class="card-content">
+<h3>2. Elige modalidad</h3>
+<p>Online o presencial.</p>
+<a href="#guias"><button>Reservar</button></a>
+</div>
+</div>
+
+<div class="card">
+<div class="card-content">
+<h3>3. Confirma</h3>
+<p>Reserva inmediata.</p>
+<a href="#reservas"><button>Ver reservas</button></a>
+</div>
+
+
+
+</section>
 <section id="guias">
+
 <h2>Especialistas</h2>
 
 <input type="text" id="nombreCliente" placeholder="Tu nombre">
 <input type="date" id="fechaReserva">
 
+<select id="horaReserva">
+<option value="">Horario</option>
+<option>10:00</option>
+<option>12:00</option>
+<option>16:00</option>
+<option>19:00</option>
+</select>
+
 <select id="tipoReserva">
+<option value="">Modalidad</option>
 <option>Online</option>
 <option>Presencial</option>
 </select>
 
 <div class="grid">
 
-<div class="card">
+<div class="card guia">
 <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330">
 <div class="card-content">
 <div class="tag">Energía</div>
 <h3>Luna ✔</h3>
-<p>⭐ 4.8 · $24.990 CLP</p>
-<button onclick="toggle('r1')">Reseñas</button>
+<div class="perfil">8 años · 1247 sesiones<br>⭐ 4.8 (327)<br>$24.990 CLP</div>
+<button onclick="toggleReseñas('r1')">Reseñas</button>
 <div id="r1" class="reseñas">Excelente guía energética</div>
+<button onclick="toggleMapa('m1')">Ubicación</button>
+<button onclick="togglePerfil('pc1')">Ver perfil completo</button>
+
+<div id="pc1" class="perfil-completo">
+<strong>Metodología:</strong> armonización energética y limpieza vibracional<br>
+<strong>Certificaciones:</strong> Reiki Usui nivel maestro<br>
+<strong>Duración:</strong> 60 min<br>
+<strong>Idiomas:</strong> Español / Inglés<br>
+<strong>Qué esperar:</strong> desbloqueo energético y alineación
+</div>
+<div id="m1" class="mapa">
+<p>Santiago Centro</p>
+<iframe src="https://maps.google.com/maps?q=santiago&t=&z=13&output=embed"></iframe>
+</div>
 <button onclick="reservar('Luna')">Reservar</button>
 </div>
 </div>
 
-<div class="card">
+<div class="card guia">
 <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9">
 <div class="card-content">
 <div class="tag">Emocional</div>
 <h3>Alma ✔</h3>
-<p>⭐ 4.9 · $29.990 CLP</p>
+<div class="perfil">11 años · 2031 sesiones<br>⭐ 4.9 (514)<br>$29.990 CLP</div>
+<button onclick="toggleReseñas('r2')">Reseñas</button>
+<div id="r2" class="reseñas">Muy cercana</div>
+<button onclick="toggleMapa('m2')">Ubicación</button>
+<button onclick="togglePerfil('pc2')">Ver perfil completo</button>
+
+<div id="pc2" class="perfil-completo">
+<strong>Metodología:</strong> sanación emocional guiada<br>
+<strong>Certificaciones:</strong> terapia transpersonal<br>
+<strong>Duración:</strong> 75 min<br>
+<strong>Idiomas:</strong> Español<br>
+<strong>Qué esperar:</strong> trabajo profundo emocional
+</div>
+<div id="m2" class="mapa">
+<iframe src="https://maps.google.com/maps?q=providencia&t=&z=13&output=embed"></iframe>
+</div>
 <button onclick="reservar('Alma')">Reservar</button>
 </div>
 </div>
 
-<div class="card">
+<div class="card guia">
 <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e">
 <div class="card-content">
 <div class="tag">Claridad</div>
 <h3>Sol ✔</h3>
-<p>⭐ 4.7 · $19.990 CLP</p>
+<div class="perfil">6 años · 893 sesiones<br>⭐ 4.7 (201)<br>$19.990 CLP</div>
+<button onclick="toggleReseñas('r3')">Reseñas</button>
+<div id="r3" class="reseñas">Muy claro</div>
+<button onclick="toggleMapa('m3')">Ubicación</button>
+<button onclick="togglePerfil('pc3')">Ver perfil completo</button>
+
+<div id="pc3" class="perfil-completo">
+<strong>Metodología:</strong> claridad y propósito vital<br>
+<strong>Certificaciones:</strong> coaching espiritual<br>
+<strong>Duración:</strong> 50 min<br>
+<strong>Idiomas:</strong> Español / Portugués<br>
+<strong>Qué esperar:</strong> enfoque y dirección
+</div>
+<div id="m3" class="mapa">
+<iframe src="https://maps.google.com/maps?q=las+condes&t=&z=13&output=embed"></iframe>
+</div>
 <button onclick="reservar('Sol')">Reservar</button>
 </div>
 </div>
 
+<div class="card guia">
+<img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df">
+<div class="card-content">
+<div class="tag">Energía</div>
+<h3>Aura ✔</h3>
+<div class="perfil">9 años · 1588 sesiones<br>⭐ 4.8 (402)<br>$27.990 CLP</div>
+<button onclick="toggleReseñas('r4')">Reseñas</button>
+<div id="r4" class="reseñas">Muy profesional</div>
+<button onclick="toggleMapa('m4')">Ubicación</button>
+<button onclick="togglePerfil('pc4')">Ver perfil completo</button>
+
+<div id="pc4" class="perfil-completo">
+<strong>Metodología:</strong> limpieza aurica avanzada<br>
+<strong>Certificaciones:</strong> bioenergética<br>
+<strong>Duración:</strong> 65 min
+</div>
+<div id="m4" class="mapa">
+<iframe src="https://maps.google.com/maps?q=ñuñoa&t=&z=13&output=embed"></iframe>
+</div>
+<button onclick="reservar('Aura')">Reservar</button>
+</div>
+</div>
+
+<div class="card guia">
+<img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d">
+<div class="card-content">
+<div class="tag">Emocional</div>
+<h3>Nova ✔</h3>
+<div class="perfil">5 años · 674 sesiones<br>⭐ 4.6 (143)<br>$18.990 CLP</div>
+<button onclick="toggleReseñas('r5')">Reseñas</button>
+<div id="r5" class="reseñas">Excelente conexión</div>
+<button onclick="toggleMapa('m5')">Ubicación</button>
+<button onclick="togglePerfil('pc5')">Ver perfil completo</button>
+
+<div id="pc5" class="perfil-completo">
+<strong>Metodología:</strong> reconexión emocional consciente<br>
+<strong>Certificaciones:</strong> mindfulness terapéutico<br>
+<strong>Duración:</strong> 55 min
+</div>
+<div id="m5" class="mapa">
+<iframe src="https://maps.google.com/maps?q=vitacura&t=&z=13&output=embed"></iframe>
+</div>
+<button onclick="reservar('Nova')">Reservar</button>
+</div>
+</div>
+
 </div>
 </section>
 
-<section id="planes">
-<h2>Membresías</h2>
-<div class="grid">
-<div class="card"><div class="card-content"><h3>Esencial</h3><button onclick="contratar('Esencial')">Contratar</button></div></div>
-<div class="card"><div class="card-content"><h3>Expansión</h3><button onclick="contratar('Expansión')">Contratar</button></div></div>
-<div class="card"><div class="card-content"><h3>Premium</h3><button onclick="contratar('Premium')">Contratar</button></div></div>
-</div>
-</section>
-
-<section id="cuenta">
-<h2>Mi Cuenta</h2>
+<section id="reservas">
+<h2>Reservas</h2>
 <ul id="listaReservas"></ul>
 </section>
 
 <div id="confirmacion">
+<h2>Reserva confirmada ✨</h2>
 <p id="mensajeConfirmacion"></p>
 <button onclick="cerrarConfirmacion()">Cerrar</button>
 </div>
+<section id="planes">
 
-<footer>
-AlmaConecta © 2026
-</footer>
+<h2>Planes AlmaConecta</h2>
+
+<div class="grid">
+
+<div class="card">
+<div class="card-content">
+<h3>Esencial</h3>
+<p>1 sesión mensual</p>
+<p><strong>$19.990 CLP</strong></p>
+<button onclick="contratarPlan('Esencial')">Contratar</button>
+</div>
+</div>
+
+<div class="card">
+<div class="card-content">
+<h3>Expansión</h3>
+<p>4 sesiones mensuales</p>
+<p><strong>$59.990 CLP</strong></p>
+<button onclick="contratarPlan('Expansión')">Contratar</button>
+</div>
+</div>
+
+<div class="card">
+<div class="card-content">
+<h3>Premium Alma</h3>
+<p>Sesiones ilimitadas + prioridad</p>
+<p><strong>$99.990 CLP</strong></p>
+<button onclick="contratarPlan('Premium Alma')">Contratar</button>
+</div>
+</div>
+
+</div>
+
+</section>
+<section id="cuenta">
+
+<h2>Mi Cuenta</h2>
+
+<div id="historial">
+
+<h3>Reservas activas</h3>
+
+<ul id="listaCuenta"></ul>
+
+</div>
+
+</section>
+<footer>AlmaConecta © 2026</footer>
 
 <script>
-function reservar(nombre){
-document.getElementById("mensajeConfirmacion").innerHTML="Reserva con "+nombre+" confirmada";
-document.getElementById("confirmacion").style.display="block";
+
+let reservas=JSON.parse(localStorage.getItem("reservas"))||[];
+mostrarReservas();
+
+function reservar(sanador){
+let nombre=document.getElementById("nombreCliente").value;
+let fecha=document.getElementById("fechaReserva").value;
+let hora=document.getElementById("horaReserva").value;
+let tipo=document.getElementById("tipoReserva").value;
+
+if(nombre===""||fecha===""||hora===""||tipo===""){
+alert("Completa todos los campos");
+return;
 }
 
-function contratar(plan){
-document.getElementById("mensajeConfirmacion").innerHTML="Plan "+plan+" contratado";
+let reserva=nombre+" reservó con "+sanador+" para "+fecha+" a las "+hora+" ("+tipo+")";
+
+reservas.push(reserva);
+localStorage.setItem("reservas",JSON.stringify(reservas));
+mostrarReservas();
+
+document.getElementById("mensajeConfirmacion").innerHTML=reserva;
 document.getElementById("confirmacion").style.display="block";
 }
 
@@ -294,11 +440,62 @@ function cerrarConfirmacion(){
 document.getElementById("confirmacion").style.display="none";
 }
 
-function toggle(id){
+function mostrarReservas(){
+
+let lista=document.getElementById("listaReservas");
+let cuenta=document.getElementById("listaCuenta");
+
+lista.innerHTML="";
+cuenta.innerHTML="";
+
+reservas.forEach(function(r,index){
+
+let item=document.createElement("li");
+item.innerHTML=r;
+lista.appendChild(item);
+
+let cuentaItem=document.createElement("li");
+cuentaItem.innerHTML=r+" <button onclick='cancelarReserva("+index+")'>Cancelar</button>";
+cuenta.appendChild(cuentaItem);
+
+});
+
+}
+
+function toggleReseñas(id){
 let x=document.getElementById(id);
 x.style.display=x.style.display==="block"?"none":"block";
 }
-</script>
 
+function toggleMapa(id){
+let x=document.getElementById(id);
+x.style.display=x.style.display==="block"?"none":"block";
+}
+
+function togglePerfil(id){
+let x=document.getElementById(id);
+x.style.display=x.style.display==="block"?"none":"block";
+}
+
+function cancelarReserva(index){
+
+reservas.splice(index,1);
+
+localStorage.setItem("reservas",JSON.stringify(reservas));
+
+mostrarReservas();
+
+alert("Reserva cancelada");
+
+}
+function contratarPlan(plan){
+
+document.getElementById("mensajeConfirmacion").innerHTML=
+"Has contratado el plan "+plan+" ✨";
+
+document.getElementById("confirmacion").style.display="block";
+
+}
+</script>
 </body>
 </html>

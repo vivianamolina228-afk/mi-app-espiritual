@@ -89,11 +89,14 @@ border:1px solid #ddd;
 }
 
 .reseñas,.mapa{
+    .perfil-completo{
 display:none;
-margin-top:12px;
-padding:14px;
-background:#f8f6f1;
-border-radius:12px;
+margin-top:14px;
+padding:16px;
+background:#f7f4ee;
+border-radius:14px;
+font-size:14px;
+line-height:1.7;
 }
 
 .tag{
@@ -222,6 +225,15 @@ padding:40px;
 <button onclick="toggleReseñas('r1')">Reseñas</button>
 <div id="r1" class="reseñas">Excelente guía energética</div>
 <button onclick="toggleMapa('m1')">Ubicación</button>
+<button onclick="togglePerfil('pc1')">Ver perfil completo</button>
+
+<div id="pc1" class="perfil-completo">
+<strong>Metodología:</strong> armonización energética y limpieza vibracional<br>
+<strong>Certificaciones:</strong> Reiki Usui nivel maestro<br>
+<strong>Duración:</strong> 60 min<br>
+<strong>Idiomas:</strong> Español / Inglés<br>
+<strong>Qué esperar:</strong> desbloqueo energético y alineación
+</div>
 <div id="m1" class="mapa">
 <p>Santiago Centro</p>
 <iframe src="https://maps.google.com/maps?q=santiago&t=&z=13&output=embed"></iframe>
@@ -239,6 +251,15 @@ padding:40px;
 <button onclick="toggleReseñas('r2')">Reseñas</button>
 <div id="r2" class="reseñas">Muy cercana</div>
 <button onclick="toggleMapa('m2')">Ubicación</button>
+<button onclick="togglePerfil('pc2')">Ver perfil completo</button>
+
+<div id="pc2" class="perfil-completo">
+<strong>Metodología:</strong> sanación emocional guiada<br>
+<strong>Certificaciones:</strong> terapia transpersonal<br>
+<strong>Duración:</strong> 75 min<br>
+<strong>Idiomas:</strong> Español<br>
+<strong>Qué esperar:</strong> trabajo profundo emocional
+</div>
 <div id="m2" class="mapa">
 <iframe src="https://maps.google.com/maps?q=providencia&t=&z=13&output=embed"></iframe>
 </div>
@@ -255,6 +276,15 @@ padding:40px;
 <button onclick="toggleReseñas('r3')">Reseñas</button>
 <div id="r3" class="reseñas">Muy claro</div>
 <button onclick="toggleMapa('m3')">Ubicación</button>
+<button onclick="togglePerfil('pc3')">Ver perfil completo</button>
+
+<div id="pc3" class="perfil-completo">
+<strong>Metodología:</strong> claridad y propósito vital<br>
+<strong>Certificaciones:</strong> coaching espiritual<br>
+<strong>Duración:</strong> 50 min<br>
+<strong>Idiomas:</strong> Español / Portugués<br>
+<strong>Qué esperar:</strong> enfoque y dirección
+</div>
 <div id="m3" class="mapa">
 <iframe src="https://maps.google.com/maps?q=las+condes&t=&z=13&output=embed"></iframe>
 </div>
@@ -271,6 +301,13 @@ padding:40px;
 <button onclick="toggleReseñas('r4')">Reseñas</button>
 <div id="r4" class="reseñas">Muy profesional</div>
 <button onclick="toggleMapa('m4')">Ubicación</button>
+<button onclick="togglePerfil('pc4')">Ver perfil completo</button>
+
+<div id="pc4" class="perfil-completo">
+<strong>Metodología:</strong> limpieza aurica avanzada<br>
+<strong>Certificaciones:</strong> bioenergética<br>
+<strong>Duración:</strong> 65 min
+</div>
 <div id="m4" class="mapa">
 <iframe src="https://maps.google.com/maps?q=ñuñoa&t=&z=13&output=embed"></iframe>
 </div>
@@ -287,6 +324,13 @@ padding:40px;
 <button onclick="toggleReseñas('r5')">Reseñas</button>
 <div id="r5" class="reseñas">Excelente conexión</div>
 <button onclick="toggleMapa('m5')">Ubicación</button>
+<button onclick="togglePerfil('pc5')">Ver perfil completo</button>
+
+<div id="pc5" class="perfil-completo">
+<strong>Metodología:</strong> reconexión emocional consciente<br>
+<strong>Certificaciones:</strong> mindfulness terapéutico<br>
+<strong>Duración:</strong> 55 min
+</div>
 <div id="m5" class="mapa">
 <iframe src="https://maps.google.com/maps?q=vitacura&t=&z=13&output=embed"></iframe>
 </div>
@@ -356,6 +400,10 @@ x.style.display=x.style.display==="block"?"none":"block";
 }
 
 function toggleMapa(id){
+let x=document.getElementById(id);
+x.style.display=x.style.display==="block"?"none":"block";
+}
+function togglePerfil(id){
 let x=document.getElementById(id);
 x.style.display=x.style.display==="block"?"none":"block";
 }

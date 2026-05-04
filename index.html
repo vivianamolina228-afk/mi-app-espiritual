@@ -159,6 +159,7 @@ padding:40px;
 <a href="#guias">Marketplace</a>
 <a href="#reservas">Reservas</a>
 <a href="#cuenta">Mi Cuenta</a>
+<a href="#planes">Planes</a>
 </div>
 </nav>
 
@@ -358,6 +359,42 @@ padding:40px;
 <p id="mensajeConfirmacion"></p>
 <button onclick="cerrarConfirmacion()">Cerrar</button>
 </div>
+<section id="planes">
+
+<h2>Planes AlmaConecta</h2>
+
+<div class="grid">
+
+<div class="card">
+<div class="card-content">
+<h3>Esencial</h3>
+<p>1 sesión mensual</p>
+<p><strong>$19.990 CLP</strong></p>
+<button onclick="contratarPlan('Esencial')">Contratar</button>
+</div>
+</div>
+
+<div class="card">
+<div class="card-content">
+<h3>Expansión</h3>
+<p>4 sesiones mensuales</p>
+<p><strong>$59.990 CLP</strong></p>
+<button onclick="contratarPlan('Expansión')">Contratar</button>
+</div>
+</div>
+
+<div class="card">
+<div class="card-content">
+<h3>Premium Alma</h3>
+<p>Sesiones ilimitadas + prioridad</p>
+<p><strong>$99.990 CLP</strong></p>
+<button onclick="contratarPlan('Premium Alma')">Contratar</button>
+</div>
+</div>
+
+</div>
+
+</section>
 <section id="cuenta">
 
 <h2>Mi Cuenta</h2>
@@ -449,6 +486,14 @@ localStorage.setItem("reservas",JSON.stringify(reservas));
 mostrarReservas();
 
 alert("Reserva cancelada");
+
+}
+function contratarPlan(plan){
+
+document.getElementById("mensajeConfirmacion").innerHTML=
+"Has contratado el plan "+plan+" ✨";
+
+document.getElementById("confirmacion").style.display="block";
 
 }
 </script>

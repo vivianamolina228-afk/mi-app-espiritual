@@ -89,7 +89,13 @@ border:1px solid #ddd;
 }
 
 .reseñas,.mapa{
-    .perfil-completo{
+display:none;
+margin-top:12px;
+padding:14px;
+background:#f8f6f1;
+border-radius:12px;
+}
+.perfil-completo{
 display:none;
 margin-top:14px;
 padding:16px;
@@ -403,6 +409,7 @@ function toggleMapa(id){
 let x=document.getElementById(id);
 x.style.display=x.style.display==="block"?"none":"block";
 }
+
 function togglePerfil(id){
 let x=document.getElementById(id);
 x.style.display=x.style.display==="block"?"none":"block";

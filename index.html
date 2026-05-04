@@ -158,6 +158,7 @@ padding:40px;
 <a href="#tutorial">Tutorial</a>
 <a href="#guias">Marketplace</a>
 <a href="#reservas">Reservas</a>
+<a href="#cuenta">Mi Cuenta</a>
 </div>
 </nav>
 
@@ -357,7 +358,19 @@ padding:40px;
 <p id="mensajeConfirmacion"></p>
 <button onclick="cerrarConfirmacion()">Cerrar</button>
 </div>
+<section id="cuenta">
 
+<h2>Mi Cuenta</h2>
+
+<div id="historial">
+
+<h3>Reservas activas</h3>
+
+<ul id="listaCuenta"></ul>
+
+</div>
+
+</section>
 <footer>AlmaConecta © 2026</footer>
 
 <script>
@@ -391,13 +404,25 @@ document.getElementById("confirmacion").style.display="none";
 }
 
 function mostrarReservas(){
+
 let lista=document.getElementById("listaReservas");
+let cuenta=document.getElementById("listaCuenta");
+
 lista.innerHTML="";
-reservas.forEach(function(r){
+cuenta.innerHTML="";
+
+reservas.forEach(function(r,index){
+
 let item=document.createElement("li");
 item.innerHTML=r;
 lista.appendChild(item);
+
+let cuentaItem=document.createElement("li");
+cuentaItem.innerHTML=r+" <button onclick='cancelarReserva("+index+")'>Cancelar</button>";
+cuenta.appendChild(cuentaItem);
+
 });
+
 }
 
 function toggleReseñas(id){
@@ -413,6 +438,18 @@ x.style.display=x.style.display==="block"?"none":"block";
 function togglePerfil(id){
 let x=document.getElementById(id);
 x.style.display=x.style.display==="block"?"none":"block";
+}
+
+function cancelarReserva(index){
+
+reservas.splice(index,1);
+
+localStorage.setItem("reservas",JSON.stringify(reservas));
+
+mostrarReservas();
+
+alert("Reserva cancelada");
+
 }
 </script>
 </body>

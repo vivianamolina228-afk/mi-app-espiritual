@@ -8,18 +8,53 @@
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-
-html{scroll-behavior:smooth;}
+html{
+scroll-behavior:smooth;
+}
 
 body{
 margin:0;
 font-family:'Inter',sans-serif;
 background:#f6f4ee;
 color:#2f3a33;
+overflow-x:hidden;
+position:relative;
+}
+
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+background:
+radial-gradient(circle at 20% 30%, rgba(124,143,119,0.08), transparent 18%),
+radial-gradient(circle at 80% 20%, rgba(138,106,74,0.07), transparent 16%),
+radial-gradient(circle at 60% 80%, rgba(85,107,93,0.06), transparent 18%);
+animation:nebulaFlow 18s ease-in-out infinite alternate;
+z-index:-2;
+}
+
+.sparkles{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+background-image:
+radial-gradient(circle, rgba(255,255,255,0.5) 1px, transparent 1px);
+background-size:80px 80px;
+animation:sparkleMove 25s linear infinite;
+opacity:0.3;
+z-index:-1;
 }
 
 h1,h2,h3{
 font-family:'Libre Baskerville',serif;
+animation:titleGlow 4s ease-in-out infinite alternate;
 }
 
 nav{
@@ -31,6 +66,7 @@ position:sticky;
 top:0;
 box-shadow:0 6px 18px rgba(0,0,0,0.05);
 z-index:100;
+backdrop-filter:blur(10px);
 }
 
 nav a{
@@ -38,6 +74,11 @@ text-decoration:none;
 color:#556b5d;
 margin-left:22px;
 font-weight:500;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#8a6a4a;
 }
 
 .logo{
@@ -66,11 +107,11 @@ background:rgba(246,244,238,0.38);
 .hero{
 position:relative;
 z-index:2;
+animation:floatHero 5s ease-in-out infinite;
 }
 
 .hero h1{
 font-size:82px;
-color:#2f3a33;
 }
 
 button{
@@ -80,16 +121,39 @@ border-radius:30px;
 background:#7c8f77;
 color:white;
 cursor:pointer;
-transition:0.3s;
+transition:0.4s;
+position:relative;
+overflow:hidden;
+}
+
+button::after{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,0.35),
+transparent
+);
+transition:0.8s;
+}
+
+button:hover::after{
+left:100%;
 }
 
 button:hover{
 background:#677760;
-transform:translateY(-2px);
+transform:translateY(-3px);
 }
 
 section{
 padding:80px 60px;
+animation:fadeUp 1.2s ease;
 }
 
 .grid{
@@ -105,6 +169,13 @@ border-radius:20px;
 overflow:hidden;
 box-shadow:0 10px 25px rgba(87,105,92,0.08);
 border:1px solid #e6e1d8;
+transition:0.4s;
+animation:cardBreath 6s ease-in-out infinite;
+}
+
+.card:hover{
+transform:translateY(-12px) scale(1.02);
+box-shadow:0 20px 35px rgba(87,105,92,0.15);
 }
 
 .card img{
@@ -135,34 +206,6 @@ font-size:13px;
 margin-bottom:12px;
 }
 
-.reseñas,.mapa,.perfil-completo{
-display:none;
-margin-top:12px;
-padding:14px;
-background:#f4f1ea;
-border-radius:12px;
-}
-
-iframe{
-width:100%;
-height:220px;
-border:none;
-border-radius:12px;
-}
-
-#confirmacion{
-display:none;
-position:fixed;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-background:white;
-padding:35px;
-border-radius:20px;
-box-shadow:0 20px 40px rgba(0,0,0,0.18);
-z-index:999;
-}
-
 footer{
 background:#556b5d;
 color:white;
@@ -170,9 +213,49 @@ text-align:center;
 padding:40px;
 }
 
+/* Animaciones */
+
+@keyframes nebulaFlow{
+0%{transform:translateY(0px);}
+100%{transform:translateY(-25px);}
+}
+
+@keyframes sparkleMove{
+from{transform:translateY(0);}
+to{transform:translateY(-120px);}
+}
+
+@keyframes floatHero{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
+}
+
+@keyframes cardBreath{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-6px);}
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(25px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@keyframes titleGlow{
+from{text-shadow:0 0 0px rgba(124,143,119,0);}
+to{text-shadow:0 0 18px rgba(124,143,119,0.18);}
+}
 </style>
 </head>
+
 <body>
+
+<div class="sparkles"></div>
 
 <nav>
 <div class="logo">AlmaConecta</div>
@@ -205,13 +288,6 @@ padding:40px;
 <section id="guias">
 <h2>Especialistas</h2>
 
-<input type="text" placeholder="Tu nombre">
-<input type="date">
-
-<select>
-<option>Horario</option>
-</select>
-
 <div class="grid">
 
 <div class="card">
@@ -219,7 +295,7 @@ padding:40px;
 <div class="card-content">
 <div class="tag">Sanación energética</div>
 <h3>Luna ✔</h3>
-<p>⭐4.8 · 1247 sesiones · $24.990</p>
+<p>⭐4.8 · 1247 sesiones</p>
 <button>Reservar</button>
 </div>
 </div>
@@ -229,7 +305,7 @@ padding:40px;
 <div class="card-content">
 <div class="tag">Reconexión emocional</div>
 <h3>Alma ✔</h3>
-<p>⭐4.9 · 2031 sesiones · $29.990</p>
+<p>⭐4.9 · 2031 sesiones</p>
 <button>Reservar</button>
 </div>
 </div>
@@ -239,7 +315,7 @@ padding:40px;
 <div class="card-content">
 <div class="tag">Claridad interior</div>
 <h3>Sol ✔</h3>
-<p>⭐4.7 · 893 sesiones · $19.990</p>
+<p>⭐4.7 · 893 sesiones</p>
 <button>Reservar</button>
 </div>
 </div>

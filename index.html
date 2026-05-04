@@ -9,11 +9,13 @@
 
 <style>
 html{scroll-behavior:smooth;}
-body{margin:0;font-family:'Inter',sans-serif;background:#faf9f7;color:#222;}
+body{margin:0;font-family:'Inter',sans-serif;background:#07080d;
+color:#f4f2ff;}
 h1,h2,h3{font-family:'Playfair Display',serif;}
 
 nav{
-background:white;
+background:rgba(8,10,20,0.95);
+backdrop-filter:blur(14px);
 padding:18px 60px;
 display:flex;
 justify-content:space-between;
@@ -24,11 +26,11 @@ z-index:100;
 }
 
 nav a{text-decoration:none;color:#444;margin-left:22px;}
-.logo{font-size:28px;font-weight:bold;color:#8b6f47;}
+.logo{font-size:28px;font-weight:bold;color:#c8b6ff;}
 
 header{
 height:85vh;
-background:url('https://images.unsplash.com/photo-1506126613408-eca07ce68773') center/cover;
+background:url('https://images.unsplash.com/photo-1534447677768-be436bb09401') center/cover;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -50,10 +52,16 @@ button{
 padding:14px 24px;
 border:none;
 border-radius:30px;
-background:#8b6f47;
+background:linear-gradient(135deg,#7c5cff,#1f7ae0);
 color:white;
 cursor:pointer;
 margin-top:8px;
+transition:0.3s;
+}
+
+button:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(124,92,255,0.35);
 }
 
 section{padding:80px 60px;}
@@ -66,7 +74,8 @@ margin-top:40px;
 }
 
 .card{
-background:white;
+background:rgba(20,22,38,0.92);
+border:1px solid rgba(255,255,255,0.08);
 border-radius:20px;
 overflow:hidden;
 box-shadow:0 8px 20px rgba(0,0,0,0.08);
@@ -108,7 +117,8 @@ line-height:1.7;
 .tag{
 display:inline-block;
 padding:6px 12px;
-background:#f3ece1;
+background:rgba(124,92,255,0.18);
+color:#d8cbff;
 border-radius:20px;
 font-size:13px;
 margin-bottom:12px;
@@ -133,7 +143,8 @@ position:fixed;
 top:50%;
 left:50%;
 transform:translate(-50%,-50%);
-background:white;
+background:#121522;
+color:white;
 padding:35px;
 border-radius:20px;
 box-shadow:0 20px 40px rgba(0,0,0,0.2);
@@ -142,7 +153,7 @@ text-align:center;
 }
 
 footer{
-background:#222;
+background:#05060a;
 color:white;
 text-align:center;
 padding:40px;
@@ -225,7 +236,7 @@ padding:40px;
 <div class="grid">
 
 <div class="card guia">
-<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330">
+<img src="https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b">
 <div class="card-content">
 <div class="tag">Energía</div>
 <h3>Luna ✔</h3>
@@ -251,7 +262,7 @@ padding:40px;
 </div>
 
 <div class="card guia">
-<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9">
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
 <div class="card-content">
 <div class="tag">Emocional</div>
 <h3>Alma ✔</h3>
@@ -276,7 +287,7 @@ padding:40px;
 </div>
 
 <div class="card guia">
-<img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e">
+<img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21">
 <div class="card-content">
 <div class="tag">Claridad</div>
 <h3>Sol ✔</h3>
@@ -301,7 +312,7 @@ padding:40px;
 </div>
 
 <div class="card guia">
-<img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df">
+<img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564">
 <div class="card-content">
 <div class="tag">Energía</div>
 <h3>Aura ✔</h3>
@@ -324,7 +335,7 @@ padding:40px;
 </div>
 
 <div class="card guia">
-<img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d">
+<img src="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3">
 <div class="card-content">
 <div class="tag">Emocional</div>
 <h3>Nova ✔</h3>
